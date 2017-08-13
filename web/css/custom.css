@@ -1,0 +1,12 @@
+
+/* GENERAL */
+
+.bolded{
+    font-weight: bold;
+}
+
+/* LOGIN */
+
+.form-group.field-loginform-rememberme {
+    margin-left: 8.5%!important;
+}
