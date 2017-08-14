@@ -22,6 +22,9 @@ class AppAsset extends AssetBundle
         'css/custom.css',
     ];
     public $js = [
+        /* search bar in menu */
+        'js/createSearchUrl.js',
+        'js/searchLoader.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

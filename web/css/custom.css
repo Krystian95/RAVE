@@ -1,12 +1,53 @@
 
 /* GENERAL */
 
+*{
+    transition: 0.2s;
+}
+
 .bolded{
     font-weight: bold;
+}
+
+body{
+    cursor: default;
+}
+
+/* MENU */
+
+#search-box-menu {
+    margin-top: 1%;
+    float: left;
+}
+
+#search-box-menu input,
+#search-box-menu span a{
+    height: 27px!important;
+    padding: 3px 12px;
+}
+
+.site-title{
+    color: white!important;
+}
+
+.site-title:hover{
+    color: #9d9d9d!important;
 }
 
 /* LOGIN */
 
 .form-group.field-loginform-rememberme {
     margin-left: 8.5%!important;
+}
+
+
+@media screen and (max-width: 767px) {
+
+    /* MENU */
+
+    #search-box-menu {
+        float: none;
+        margin-left: 0%;
+        width: 100%;
+    }
 }

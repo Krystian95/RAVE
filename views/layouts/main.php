@@ -4,6 +4,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use yii\helpers\Url;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -28,6 +29,9 @@ AppAsset::register($this);
             NavBar::begin([
                 'brandLabel' => 'RAVE',
                 'brandUrl' => Yii::$app->homeUrl,
+                'brandOptions' => [
+                    'class' => 'site-title'
+                ],
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
                 ],
@@ -36,6 +40,16 @@ AppAsset::register($this);
                 ['label' => 'Home', 'url' => ['/site/index']],
                 ['label' => 'About', 'url' => ['/site/about']]
             ];
+            ?>
+
+            <div id="search-box-menu" class="input-group col-lg-4">
+                <input type="text" id="query-value-menu" class="query-value form-control" placeholder="Search for..." value="" />
+                <span class="input-group-btn">
+                    <a href="<?= Url::home() ?>" id="button-search-menu" class="button-search btn btn-default">Search <span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                </span>
+            </div>
+
+            <?php
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
