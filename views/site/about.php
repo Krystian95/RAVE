@@ -2,10 +2,10 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-$this->title = 'About';
+$this->title = 'RAVE - About';
 ?>
 <div class="site-about">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1>About</h1>
 
     <p>
         We are... We do...

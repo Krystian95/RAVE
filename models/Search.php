@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use app\models\WikipediaAPI;
 use yii\base\Model;
 
 /**
@@ -16,19 +17,13 @@ class Search extends Model {
         $this->query = $query;
     }
 
-    public function getQuery() {
-        return $this->query;
-    }
-    
-    public function getResult(){
-        $result = [
-            'aaaa',
-            'bbbb',
-            'cccc',
-            'dddd'
-        ];
-        
-        return $result;
+    public function getSearchResults() {
+
+        $wikipedia_api = new WikipediaAPI();
+        $wikipedia_api->setSearchParams($this->query);
+        $wikipedia_results = $wikipedia_api->getSearchResults();
+
+        return $wikipedia_results;
     }
 
 }

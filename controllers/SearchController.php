@@ -18,12 +18,12 @@ class SearchController extends \yii\web\Controller {
         if (isset($query)) {
             if ($query !== null && $query !== '' && $query !== 'undefined') {
 
-                $model = new Search($query);
-                $result = $model->getResult();
+                $searcher = new Search($query);
+                $results = $searcher->getSearchResults();
 
                 return $this->render('index', [
                             'query' => $query,
-                            'result' => $result
+                            'results' => $results
                 ]);
             } else {
                 return $this->render('index');

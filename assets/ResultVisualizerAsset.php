@@ -9,24 +9,17 @@ namespace app\assets;
 
 use yii\web\AssetBundle;
 
-/**
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @since 2.0
- */
-class AppAsset extends AssetBundle
+class ResultVisualizerAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
-        'css/custom.css',
-        'css/jquery-ui.min.css'
+        'css/resultVisualizer.css'
     ];
     public $js = [
-        /* search bar in menu */
-        'js/jquery-ui.min.js',
-        'js/createSearchUrl.js',
-        'js/searchLoaderGlobal.js'
+        'js/jquery.mark.min.js',
+        'js/paginathing.js',
+        'js/searchLoaderLocal.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
