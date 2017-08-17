@@ -1,0 +1,41 @@
+
+.post-list-title{
+    margin: 20px auto 30px auto;
+    text-align: center;
+}
+
+.post-container{
+    padding: 0!important;
+    margin: 0!important;
+    transition: 0.2s!important;
+}
+
+.post-container a{
+    text-decoration: none;
+    transition: 0s!important;
+}
+
+.post{
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.post a{
+    text-decoration: none;
+}
+
+.post:hover{
+    background-color: rgba(239, 239, 239, 0.65);
+    color: orange;
+}
+
+span.label.label-default.updated {
+    font-size: 46%;
+    vertical-align: middle;
+    padding: .3em;
+    background-color: orange;
+}
+
+.updated-hover {
+    background-color: #337ab7!important;
+}

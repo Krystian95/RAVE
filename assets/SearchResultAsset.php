@@ -9,7 +9,7 @@ namespace app\assets;
 
 use yii\web\AssetBundle;
 
-class ResultVisualizerAsset extends AssetBundle
+class SearchResultAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';

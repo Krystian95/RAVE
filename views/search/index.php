@@ -1,8 +1,7 @@
 <?php
-use yii\helpers\Html;
 use yii\widgets\Pjax;
 use yii\helpers\Url;
-use app\components\ResultVisualizerWidget;
+use app\components\SearchResultWidget;
 
 /* @var $this yii\web\View */
 $this->title = 'RAVE - Search';
@@ -27,7 +26,7 @@ $this->title = 'RAVE - Search';
 
     <?php
     if (isset($results)) {
-        echo ResultVisualizerWidget::widget([
+        echo SearchResultWidget::widget([
             'query' => $query,
             'results' => $results
         ]);

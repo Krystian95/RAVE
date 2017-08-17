@@ -6,9 +6,9 @@
 namespace app\components;
 
 use yii\base\Widget;
-use app\assets\ResultVisualizerAsset;
+use app\assets\SearchResultAsset;
 
-class ResultVisualizerWidget extends Widget {
+class SearchResultWidget extends Widget {
 
     public $query;
     public $results;
@@ -16,7 +16,7 @@ class ResultVisualizerWidget extends Widget {
     public function init() {
         parent::init();
 
-        ResultVisualizerAsset::register($this->getView());
+        SearchResultAsset::register($this->getView());
     }
 
     public function run() {

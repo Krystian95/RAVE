@@ -26,7 +26,8 @@ $(document).on('ready pjax:success', function () {
 
         params['query'] = query;
         var baseUrl = $(this).attr('href');
-        var finalUrl = createSearchUrl(baseUrl, params);
+        var urlTool = new UrlTool(baseUrl, params);
+        var finalUrl = urlTool.createSearchUrl();
         $(this).attr('href', finalUrl);
     });
 
@@ -38,7 +39,8 @@ $(document).on('ready pjax:success', function () {
             var params = {};
             params['query'] = $(this).val();
             var baseUrl = $('.button-search').attr('href');
-            var finalUrl = createSearchUrl(baseUrl, params);
+            var urlTool = new UrlTool(baseUrl, params);
+            var finalUrl = urlTool.createSearchUrl();
             window.location.replace(finalUrl);
         }
     });

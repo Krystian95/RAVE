@@ -8,6 +8,7 @@ use app\models\SignupForm;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use app\models\PostListGenerator;
 
 class SiteController extends Controller {
 
@@ -46,7 +47,16 @@ class SiteController extends Controller {
     }
 
     public function actionIndex() {
-        return $this->render('index');
+
+        $category = 'Member states of the United Nations';
+
+        $model = new PostListGenerator($category);
+        $postByCategory = $model->getPostsList();
+
+        return $this->render('index', [
+                    'category' => $category,
+                    'posts' => $postByCategory
+        ]);
     }
 
     public function actionLogin() {
@@ -64,7 +74,7 @@ class SiteController extends Controller {
     }
 
     public function actionLogout() {
-        
+
         Yii::$app->user->logout();
 
         return $this->goHome();

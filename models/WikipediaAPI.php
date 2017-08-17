@@ -9,10 +9,9 @@ use yii\base\Model;
  */
 class WikipediaAPI extends Model {
 
-    private $type;
-    private $query;
-    private $api_result;
     private $baseUrl = 'https://en.wikipedia.org/w/api.php';
+    private $query;
+    private $category;
 
     public function __construct() {
         
@@ -45,25 +44,23 @@ class WikipediaAPI extends Model {
 
         $pageTitle = $this->query;
         $result_limit = 'max'; /* max=500 */
-        $extract_chars_limit = 400; /* 1200 */
 
         $pageTitleForUrl = urlencode($pageTitle);
         /*
          * https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&format=json&list=search&titles=Italy&exchars=200&exintro=1&explaintext=1&srsearch=Italy&srlimit=500&srwhat=text&srprop=snippet
          */
-        $api_call = '?action=query&format=json&list=search&titles='.$pageTitleForUrl.'&srsearch='.$pageTitleForUrl.'&srnamespace=0&srlimit='.$result_limit.'&sroffset=0&srwhat=text&srprop=snippet';
+        $api_call = '?action=query&format=json&list=search&titles=' . $pageTitleForUrl . '&srsearch=' . $pageTitleForUrl . '&srnamespace=0&srlimit=' . $result_limit . '&sroffset=0&srwhat=text&srprop=snippet';
 
-        $this->api_result = $this->getAPIResult($api_call);
+        $api_result = $this->getAPIResult($api_call);
 
-        $response = $this->buildResponse($this->api_result);
+        $response = $this->buildSearchResultsResponse($api_result);
 
         return $response;
     }
 
-    private function buildResponse($api_result) {
+    private function buildSearchResultsResponse($api_result) {
 
         $response = [];
-
 
         if (isset($api_result['query']['search'])) {
 
@@ -84,6 +81,63 @@ class WikipediaAPI extends Model {
                 }
 
                 array_push($response, $response_element);
+            }
+        }
+
+        return $response;
+    }
+
+    public function setPostByCategoryParams($category) {
+        $this->category = $category;
+    }
+
+    public function getPostByCategory() {
+
+        $pageTitle = $this->category;
+        $result_limit = 'max'; /* max=500 */
+
+        $pageTitleForUrl = urlencode($pageTitle);
+        /*
+         * Ordine di aggiunta alla categoria (dalla più recente alla meno recente)
+         * https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&format=json&list=categorymembers&cmtitle=Category%3AMember_states_of_the_United_Nations&cmlimit=500&cmsort=timestamp&cmdir=desc&cmnamespace=0
+         */
+        $api_call = '?action=query&format=json&list=categorymembers&cmtitle=Category:' . $pageTitleForUrl . '&cmlimit=' . $result_limit . '&cmsort=timestamp&cmdir=newer&cmnamespace=0';
+
+        $api_result = $this->getAPIResult($api_call);
+
+        $response = $this->buildPostByCategoryResponse($api_result);
+
+        return $response;
+    }
+
+    private function buildPostByCategoryResponse($api_result) {
+
+        $response = [];
+
+        if (isset($api_result['query']['categorymembers'])) {
+
+            $posts = $api_result['query']['categorymembers'];
+
+            $count = 0;
+
+            foreach ($posts as $post) {
+
+                if ($count < 12) {
+                    $newer = true;
+                } else {
+                    $newer = false;
+                }
+
+                $response_element = [
+                    'id' => $post['pageid'],
+                    'title' => $post['title'],
+                    'url' => 'SOMETHING_TO_ADD_TO_' . $post['title'],
+                    'newer' => $newer
+                ];
+
+                array_push($response, $response_element);
+
+                $count++;
             }
         }
 

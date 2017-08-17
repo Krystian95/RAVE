@@ -28,7 +28,7 @@ AppAsset::register($this);
             <?php
             NavBar::begin([
                 'brandLabel' => 'RAVE',
-                'brandUrl' => Yii::$app->homeUrl,
+                'brandUrl' => ['/site/index'],
                 'brandOptions' => [
                     'class' => 'site-title'
                 ],
