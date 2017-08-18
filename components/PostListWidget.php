@@ -1,8 +1,5 @@
 <?php
 
-/**
- * Built with: http://silviomoreto.github.io/bootstrap-select/examples
- */
 namespace app\components;
 
 use yii\base\Widget;
@@ -31,7 +28,7 @@ HTML;
             foreach ($this->posts as $post) {
 
                 if ($post['newer']) {
-                    $newer = '<span data-id="' . $post['id'] . '" class="label label-default updated">Updated</span>';
+                    $newer = '<span data-id="' . $post['id'] . '" class="label label-default updated">' . $post['newer'] . '</span>';
                 } else {
                     $newer = '';
                 }

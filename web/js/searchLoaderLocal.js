@@ -31,6 +31,14 @@ function setupPaginator() {
             if (limitPagination > 10) {
                 limitPagination = 10;
             }
+
+            if (screen.width <= 320) {
+                limitPagination = 3;
+            } else if (screen.width <= 375) {
+                limitPagination = 4;
+            } else if (screen.width <= 425) {
+                limitPagination = 5;
+            }
         }
 
         $('.list-group').paginathing({

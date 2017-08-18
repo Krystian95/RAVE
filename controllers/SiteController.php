@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use app\models\PostListGenerator;
+use app\models\MainCategory;
 
 class SiteController extends Controller {
 
@@ -48,7 +49,8 @@ class SiteController extends Controller {
 
     public function actionIndex() {
 
-        $category = 'Member states of the United Nations';
+        $main_category = new MainCategory();
+        $category = $main_category->getMainCategory();
 
         $model = new PostListGenerator($category);
         $postByCategory = $model->getPostsList();

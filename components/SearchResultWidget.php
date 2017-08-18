@@ -1,8 +1,5 @@
 <?php
 
-/**
- * Built with: http://silviomoreto.github.io/bootstrap-select/examples
- */
 namespace app\components;
 
 use yii\base\Widget;

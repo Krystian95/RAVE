@@ -3,6 +3,7 @@
 namespace app\models;
 
 use yii\base\Model;
+use Yii;
 
 /**
  * ContactForm is the model behind the contact form.
@@ -12,9 +13,15 @@ class WikipediaAPI extends Model {
     private $baseUrl = 'https://en.wikipedia.org/w/api.php';
     private $query;
     private $category;
+    private $title;
 
     public function __construct() {
         
+    }
+
+    private function starts_with_upper($str) {
+        $chr = mb_substr($str, 0, 1, "UTF-8");
+        return mb_strtolower($chr, "UTF-8") != $chr;
     }
 
     private function getAPIResult($api_call) {
@@ -70,12 +77,21 @@ class WikipediaAPI extends Model {
 
                 $response_element = [
                     'title' => $page['title'],
-                    'url' => 'SOMETHING_TO_ADD_TO_' . $page['title']
+                    'url' => Yii::$app->getHomeUrl() . 'articles/article?title=' . $page['title']
                 ];
 
                 if (isset($page['snippet'])) {
+
+                    $points = '';
+
+                    if (!$this->starts_with_upper(trim($page['snippet']))) {
+                        $points = '...';
+                    }
+
+                    $snippet = $points . trim($page['snippet']) . '...';
+
                     $response_snippet = [
-                        'snippet' => $page['snippet']
+                        'snippet' => $snippet
                     ];
                     $response_element = array_merge($response_element, $response_snippet);
                 }
@@ -93,15 +109,15 @@ class WikipediaAPI extends Model {
 
     public function getPostByCategory() {
 
-        $pageTitle = $this->category;
+        $categoryName = $this->category;
         $result_limit = 'max'; /* max=500 */
 
-        $pageTitleForUrl = urlencode($pageTitle);
+        $categoryNameForUrl = urlencode($categoryName);
         /*
          * Ordine di aggiunta alla categoria (dalla più recente alla meno recente)
          * https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&format=json&list=categorymembers&cmtitle=Category%3AMember_states_of_the_United_Nations&cmlimit=500&cmsort=timestamp&cmdir=desc&cmnamespace=0
          */
-        $api_call = '?action=query&format=json&list=categorymembers&cmtitle=Category:' . $pageTitleForUrl . '&cmlimit=' . $result_limit . '&cmsort=timestamp&cmdir=newer&cmnamespace=0';
+        $api_call = '?action=query&format=json&list=categorymembers&cmtitle=Category:' . $categoryNameForUrl . '&cmlimit=' . $result_limit . '&cmsort=timestamp&cmdir=newer&cmnamespace=0';
 
         $api_result = $this->getAPIResult($api_call);
 
@@ -123,7 +139,7 @@ class WikipediaAPI extends Model {
             foreach ($posts as $post) {
 
                 if ($count < 12) {
-                    $newer = true;
+                    $newer = 'Last<br>Updated';
                 } else {
                     $newer = false;
                 }
@@ -131,7 +147,7 @@ class WikipediaAPI extends Model {
                 $response_element = [
                     'id' => $post['pageid'],
                     'title' => $post['title'],
-                    'url' => 'SOMETHING_TO_ADD_TO_' . $post['title'],
+                    'url' => Yii::$app->getHomeUrl() . 'articles/article?title=' . $post['title'],
                     'newer' => $newer
                 ];
 
@@ -142,6 +158,81 @@ class WikipediaAPI extends Model {
         }
 
         return $response;
+    }
+
+    public function setArticleParams($title, $category) {
+        $this->title = $title;
+        $this->category = $category;
+    }
+
+    private function getPostTitlesByCategory($category) {
+
+        $categoryName = $category;
+        $result_limit = 'max'; /* max=500 */
+
+        $categoryNameForUrl = urlencode($categoryName);
+        /*
+         * Ordine di aggiunta alla categoria (dalla più recente alla meno recente)
+         * https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&format=json&list=categorymembers&cmtitle=Category%3AMember_states_of_the_United_Nations&cmlimit=500&cmsort=timestamp&cmdir=desc&cmnamespace=0
+         */
+        $api_call = '?action=query&format=json&list=categorymembers&cmtitle=Category:' . $categoryNameForUrl . '&cmlimit=' . $result_limit . '&cmsort=timestamp&cmdir=newer&cmnamespace=0';
+
+        $api_result = $this->getAPIResult($api_call);
+
+        $items = $api_result['query']['categorymembers'];
+        $articles_titles = array_column($items, 'title');
+
+        return $articles_titles;
+    }
+
+    public function getArticle() {
+
+        $pageTitle = $this->title;
+
+        $pageTitleForUrl = urlencode($pageTitle);
+        /*
+         * https://en.wikipedia.org/wiki/Special:ApiSandbox#action=parse&format=json&page=Silvio+Berlusconi&prop=text%7Crevid&mobileformat=1&noimages=1
+         */
+        $api_call = '?action=parse&format=json&page=' . $pageTitleForUrl . '&prop=text%7Crevid&mobileformat=1&noimages=1';
+
+        $api_result = $this->getAPIResult($api_call);
+
+        $response = $this->buildArticleResponse($api_result);
+
+        return $response;
+    }
+
+    private function buildArticleResponse($api_result) {
+
+        if (isset($api_result['parse'])) {
+
+            $main_category = new MainCategory();
+            $main_category_name = $main_category->getMainCategory();
+            $main_category_articles = $this->getPostTitlesByCategory($main_category_name);
+
+            if (in_array($api_result['parse']['title'], $main_category_articles)) {
+                $article_in_main_category = true;
+            } else {
+                $article_in_main_category = false;
+            }
+
+            $response = [
+                'title' => $api_result['parse']['title'],
+                'pageId' => $api_result['parse']['pageid'],
+                'revisionId' => $api_result['parse']['revid'],
+                'text' => $api_result['parse']['text']['*'],
+                'of_main_category' => $article_in_main_category
+            ];
+
+            return $response;
+        } else {
+
+            $response = [
+                'error' => $api_result['error']['info']
+            ];
+
+            return $response;
+        }
     }
 
 }

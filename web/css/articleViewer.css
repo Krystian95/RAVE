@@ -1,0 +1,87 @@
+
+#article span.mw-editsection,
+#article .metadata,
+#article table:not(.wikitable),
+#article .infobox,
+#article .barbox,
+#article .thumbinner,
+#article .navigation-not-searchable,
+#article .portal,
+#article .gallery,
+#article .mw-mf-image-replacement,
+#article li.mw-empty-elt,
+#article .noresize
+{
+    display: none!important;
+}
+
+#article div#toc,
+#article table.vertical-navbox
+{
+    background-color: yellow!important;
+}
+
+#article .light-gray{
+    color: #ccc
+}
+
+#article span.glyphicon.glyphicon-share.light-gray {
+    margin-left: 4px;
+    margin-right: 2px;
+}
+
+#article a{
+    text-decoration: none!important;
+}
+
+#article a:hover{
+    color: orange!important;
+}
+
+#article .title{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    color: orange;
+    font-weight: bold;
+}
+
+#article .section-heading {
+    color: white;
+    background-color: orange;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+#article .section-heading + div { 
+    padding: 7px;
+}
+
+#article table {
+    border-collapse: collapse!important;
+    width: 100%!important;
+    margin-top: 10px!important;
+    margin-bottom: 10px!important;
+}
+
+#article table th a:hover{
+    color: white!important;
+}
+
+#article th, td {
+    text-align: left!important;
+    padding: 8px!important;
+}
+
+#article tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+#article tr:hover{
+    background-color: #d8d8d8!important;
+}
+
+#article th {
+    background-color: orange!important;
+    color: white!important;
+}
