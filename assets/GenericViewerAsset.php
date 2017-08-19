@@ -18,6 +18,7 @@ class GenericViewerAsset extends AssetBundle {
         'css/genericViewer.css'
     ];
     public $js = [
+        'js/UrlTool.js',
         'js/articleViewer.js'
     ];
     public $depends = [

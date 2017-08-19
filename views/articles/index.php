@@ -9,6 +9,10 @@ if (isset($article_text) || isset($article_error)) {
 
         if ($article_of_main_category) {
             
+            /*
+             * replace with SpecificViewer
+             */
+            
             echo GenericViewerWidget::widget([
                 'article_title' => $article_title,
                 'article_pageId' => $article_pageId,
@@ -17,10 +21,6 @@ if (isset($article_text) || isset($article_error)) {
             ]);
             
         } else {
-            
-            /*
-             * replace with SpecificViewer
-             */
             
             echo GenericViewerWidget::widget([
                 'article_title' => $article_title,

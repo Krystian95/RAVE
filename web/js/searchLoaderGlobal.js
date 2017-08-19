@@ -28,6 +28,7 @@ $(document).on('ready pjax:success', function () {
         var baseUrl = $(this).attr('href');
         var urlTool = new UrlTool(baseUrl, params);
         var finalUrl = urlTool.createSearchUrl();
+
         $(this).attr('href', finalUrl);
     });
 

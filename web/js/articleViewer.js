@@ -6,4 +6,7 @@ $(document).on('ready pjax:success', function () {
     var eternalLinkImage = '<span class="glyphicon glyphicon-share light-gray" aria-hidden="true"></span>'
     $("a.external").append(eternalLinkImage);
 
+    var urlTool = new UrlTool();
+    urlTool.replaceUrlLinks('#article');
+
 });
