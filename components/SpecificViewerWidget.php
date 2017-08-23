@@ -3,12 +3,13 @@
 namespace app\components;
 
 use yii\base\Widget;
-use app\assets\GenericViewerAsset;
+use app\assets\SpecificViewerAsset;
 use app\assets\AnnotatorAsset;
 use app\assets\AnnotatorGuestAsset;
+use app\components\CrossrefWidget;
 use Yii;
 
-class GenericViewerWidget extends Widget {
+class SpecificViewerWidget extends Widget {
 
     public $article_title;
     public $article_pageId;
@@ -16,13 +17,13 @@ class GenericViewerWidget extends Widget {
     public $article_text;
     public $username_logged_in;
     public $article_new_link;
+    public $crossref;
 
     public function init() {
         parent::init();
 
-        GenericViewerAsset::register($this->getView());
+        SpecificViewerAsset::register($this->getView());
         AnnotatorAsset::register($this->getView());
-
 
         if (Yii::$app->user->isGuest) {
             AnnotatorGuestAsset::register($this->getView());
@@ -34,7 +35,6 @@ class GenericViewerWidget extends Widget {
         $homeUrl = Yii::$app->getHomeUrl();
 
         $html = <<<HTML
-<div id="article">
     <input type="hidden" id="homeUrl" value="{$homeUrl}" />
     <input type="hidden" id="article_id" value="{$this->article_pageId}" />
     <input type="hidden" id="article_revision_id" value="{$this->article_revisionId}" />
@@ -54,8 +54,38 @@ HTML;
         }
 
         $html .= <<<HTML
-    <div class="text">
-        {$this->article_text}
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#Article">Article</a></li>
+    <li><a data-toggle="tab" href="#Crossref">Crossref</a></li>
+    <li><a data-toggle="tab" href="#Twitter">Twitter</a></li>
+    <li><a data-toggle="tab" href="#YouTube">YouTube</a></li>
+    <li><a data-toggle="tab" href="#GoogleMaps">Google Maps</a></li>
+</ul>
+                
+<div class="tab-content">
+    <div id="Article" class="tab-pane fade in active">
+        <div id="article">
+            <div class="text">
+                {$this->article_text}
+            </div>
+        </div>
+    </div>
+    <div id="Crossref" class="tab-pane fade">
+HTML;
+        $html .= CrossrefWidget::widget([
+                    'crossref' => $this->crossref
+        ]);
+
+        $html .= <<<HTML
+    </div>
+    <div id="Twitter" class="tab-pane fade">
+        <h3>Twitter</h3>
+    </div>
+    <div id="YouTube" class="tab-pane fade">
+        <h3>YouTube</h3>
+    </div>
+    <div id="GoogleMaps" class="tab-pane fade">
+        <h3>Google Maps</h3>
     </div>
 </div>
 HTML;

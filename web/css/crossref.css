@@ -1,0 +1,38 @@
+
+.crossref-results .result .authors-label,
+.crossref-results .result .date_time-label,
+.crossref-results .result .ISBN-label,
+.crossref-results .result .title{
+    font-weight: bold;
+}
+
+.crossref-results .result .title{
+    color: #337ab7;
+}
+
+.crossref-results .result .title a:hover{
+    color: #ffa500!important;
+}
+
+.crossref-results .link{
+    text-decoration: none;
+}
+
+.crossref-results .author-affiliations{
+    font-style: italic;
+}
+
+.crossref-results .result {
+    border: 2px solid #ccc;
+    padding: 13px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.crossref-results .result:nth-child(even) {
+    background-color: rgba(243, 242, 242, 0.57);
+}
+
+.crossref-results .result:hover {
+    background-color: rgba(222, 220, 220, 0.70);
+}

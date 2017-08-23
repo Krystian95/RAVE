@@ -5,6 +5,7 @@ namespace app\models;
 use yii\base\Model;
 use Yii;
 use yii\db\Query;
+use app\models\API;
 
 /**
  * ContactForm is the model behind the contact form.
@@ -25,25 +26,6 @@ class WikipediaAPI extends Model {
         return mb_strtolower($chr, "UTF-8") != $chr;
     }
 
-    private function getAPIResult($api_call) {
-
-        $opts = array('http' =>
-            array(
-                'user_agent' => 'MyBot/1.0 (http://www.mysite.com/)'
-            )
-        );
-
-        $context = stream_context_create($opts);
-
-        $url = $this->baseUrl . $api_call;
-
-        $json = file_get_contents($url, false, $context);
-
-        $data = json_decode($json, true);
-
-        return $data;
-    }
-
     public function setSearchParams($query) {
         $this->query = $query;
     }
@@ -59,7 +41,8 @@ class WikipediaAPI extends Model {
          */
         $api_call = '?action=query&format=json&list=search&titles=' . $pageTitleForUrl . '&srsearch=' . $pageTitleForUrl . '&srnamespace=0&srlimit=' . $result_limit . '&sroffset=0&srwhat=text&srprop=snippet';
 
-        $api_result = $this->getAPIResult($api_call);
+        $api = new API($this->baseUrl);
+        $api_result = $api->getAPIResult($api_call);
 
         $response = $this->buildSearchResultsResponse($api_result);
 
@@ -120,7 +103,8 @@ class WikipediaAPI extends Model {
          */
         $api_call = '?action=query&format=json&list=categorymembers&cmtitle=Category:' . $categoryNameForUrl . '&cmlimit=' . $result_limit . '&cmsort=timestamp&cmdir=newer&cmnamespace=0';
 
-        $api_result = $this->getAPIResult($api_call);
+        $api = new API($this->baseUrl);
+        $api_result = $api->getAPIResult($api_call);
 
         $response = $this->buildPostByCategoryResponse($api_result);
 
@@ -178,7 +162,8 @@ class WikipediaAPI extends Model {
          */
         $api_call = '?action=query&format=json&list=categorymembers&cmtitle=Category:' . $categoryNameForUrl . '&cmlimit=' . $result_limit . '&cmsort=timestamp&cmdir=newer&cmnamespace=0';
 
-        $api_result = $this->getAPIResult($api_call);
+        $api = new API($this->baseUrl);
+        $api_result = $api->getAPIResult($api_call);
 
         $items = $api_result['query']['categorymembers'];
         $articles_titles = array_column($items, 'title');
@@ -196,11 +181,12 @@ class WikipediaAPI extends Model {
          */
         $api_call = '?action=parse&format=json&page=' . $pageTitleForUrl . '&prop=text%7Crevid&mobileformat=1&noimages=1';
 
-        $api_result = $this->getAPIResult($api_call);
+        $api = new API($this->baseUrl);
+        $api_result = $api->getAPIResult($api_call);
 
         $response = $this->buildArticleResponse($api_result);
 
-        if (!$newer) {
+        if ($newer !== true) {
             if (isset($response['revisionId'])) {
                 if (($this->getRevisionIdIfAnnotated($response['pageId']) != $response['revisionId'] && $this->getRevisionIdIfAnnotated($response['pageId']) != null)) {
                     $old_atricle = $this->getOldArticle($response['revisionId']);
@@ -224,7 +210,8 @@ class WikipediaAPI extends Model {
          */
         $api_call = '?action=parse&format=json&oldid=' . $revision_id . '&prop=text%7Crevid&mobileformat=1&noimages=1';
 
-        $api_result = $this->getAPIResult($api_call);
+        $api = new API($this->baseUrl);
+        $api_result = $api->getAPIResult($api_call);
 
         $response = $this->buildArticleResponse($api_result);
 

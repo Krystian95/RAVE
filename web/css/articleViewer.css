@@ -21,11 +21,19 @@
     background-color: yellow!important;
 }
 
+.main-title{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    color: orange;
+    font-size: 35px!important;
+}
+
 #article .light-gray{
     color: #ccc
 }
 
-#article span.glyphicon.glyphicon-share.light-gray {
+span.glyphicon.glyphicon-share.light-gray {
     margin-left: 4px;
     margin-right: 2px;
 }
@@ -38,14 +46,6 @@
     color: orange!important;
 }
 
-#article .title{
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 40px;
-    color: orange;
-    font-size: 35px!important;
-}
-
 #article .section-heading {
     color: white;
     background-color: orange;
@@ -53,7 +53,8 @@
     border-radius: 3px;
 }
 
-#article .section-heading + div { 
+#article .section-heading + div,
+.mf-section-0{ 
     padding: 7px;
 }
 
