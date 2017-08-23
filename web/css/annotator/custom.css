@@ -1,0 +1,471 @@
+
+/* === START COLORS === */
+
+:root {
+    --red: rgba(255, 51, 0, 0.40);
+    --orange: rgba(255, 153, 0, 0.40);
+    --yellow: rgba(255, 255, 0, 0.40);
+    --light_green: rgba(51, 204, 0, 0.40);
+    --dark_green: rgba(0, 153, 0, 0.40);
+    --azure: rgba(0, 204, 255, 0.40);
+    --blue: rgba(0, 51, 255, 0.40);
+    --violet: rgba(153, 0, 255, 0.40);
+    --brown: rgba(153, 0, 0, .68);
+    --olive: rgba(153, 153, 51, 0.40);
+    --gray: rgba(204, 204, 204, 0.40);
+    --pink: rgba(255, 153, 255, 0.40);
+}
+
+.annotator-hl-annotator_color_pink {
+    background: var(--pink);
+    /* fixed properties */
+    cursor:pointer;
+    padding: 1px 3px;
+    border-radius: 2px;
+    border-style: solid!important;
+    border-width: 1px!important;
+    border-color: transparent;
+}
+
+.annotator_color_pink {
+    background: var(--pink);
+    /* fixed properties */
+    border: 0!important;
+    width: 100%!important;
+    margin: 0!important;
+    height: 20px!important;
+    padding: 0!important;
+}
+
+.annotator-hl-annotator_color_gray {
+    background: var(--gray);
+    /* fixed properties */
+    cursor:pointer;
+    padding: 1px 3px;
+    border-radius: 2px;
+    border-style: solid!important;
+    border-width: 1px!important;
+    border-color: transparent;
+}
+
+.annotator_color_gray {
+    background: var(--gray);
+    /* fixed properties */
+    border: 0!important;
+    width: 100%!important;
+    margin: 0!important;
+    height: 20px!important;
+    padding: 0!important;
+}
+
+.annotator-hl-annotator_color_olive {
+    background: var(--olive);
+    /* fixed properties */
+    cursor:pointer;
+    padding: 1px 3px;
+    border-radius: 2px;
+    border-style: solid!important;
+    border-width: 1px!important;
+    border-color: transparent;
+}
+
+.annotator_color_olive {
+    background: var(--olive);
+    /* fixed properties */
+    border: 0!important;
+    width: 100%!important;
+    margin: 0!important;
+    height: 20px!important;
+    padding: 0!important;
+}
+
+.annotator-hl-annotator_color_brown {
+    background: var(--brown);
+    /* fixed properties */
+    cursor:pointer;
+    padding: 1px 3px;
+    border-radius: 2px;
+    border-style: solid!important;
+    border-width: 1px!important;
+    border-color: transparent;
+}
+
+.annotator_color_brown {
+    background: var(--brown);
+    /* fixed properties */
+    border: 0!important;
+    width: 100%!important;
+    margin: 0!important;
+    height: 20px!important;
+    padding: 0!important;
+}
+
+.annotator-hl-annotator_color_violet {
+    background: var(--violet);
+    /* fixed properties */
+    cursor:pointer;
+    padding: 1px 3px;
+    border-radius: 2px;
+    border-style: solid!important;
+    border-width: 1px!important;
+    border-color: transparent;
+}
+
+.annotator_color_violet {
+    background: var(--violet);
+    /* fixed properties */
+    border: 0!important;
+    width: 100%!important;
+    margin: 0!important;
+    height: 20px!important;
+    padding: 0!important;
+}
+
+.annotator-hl-annotator_color_blue {
+    background: var(--blue);
+    /* fixed properties */
+    cursor:pointer;
+    padding: 1px 3px;
+    border-radius: 2px;
+    border-style: solid!important;
+    border-width: 1px!important;
+    border-color: transparent;
+}
+
+.annotator_color_blue {
+    background: var(--blue);
+    /* fixed properties */
+    border: 0!important;
+    width: 100%!important;
+    margin: 0!important;
+    height: 20px!important;
+    padding: 0!important;
+}
+
+.annotator-hl-annotator_color_azure {
+    background: var(--azure);
+    /* fixed properties */
+    cursor:pointer;
+    padding: 1px 3px;
+    border-radius: 2px;
+    border-style: solid!important;
+    border-width: 1px!important;
+    border-color: transparent;
+}
+
+.annotator_color_azure {
+    background: var(--azure);
+    /* fixed properties */
+    border: 0!important;
+    width: 100%!important;
+    margin: 0!important;
+    height: 20px!important;
+    padding: 0!important;
+}
+
+.annotator-hl-annotator_color_dark_green {
+    background: var(--dark_green);
+    /* fixed properties */
+    cursor:pointer;
+    padding: 1px 3px;
+    border-radius: 2px;
+    border-style: solid!important;
+    border-width: 1px!important;
+    border-color: transparent;
+}
+
+.annotator_color_dark_green {
+    background: var(--dark_green);
+    /* fixed properties */
+    border: 0!important;
+    width: 100%!important;
+    margin: 0!important;
+    height: 20px!important;
+    padding: 0!important;
+}
+
+.annotator-hl-annotator_color_light_green {
+    background: var(--light_green);
+    /* fixed properties */
+    cursor:pointer;
+    padding: 1px 3px;
+    border-radius: 2px;
+    border-style: solid!important;
+    border-width: 1px!important;
+    border-color: transparent;
+}
+
+.annotator_color_light_green {
+    background: var(--light_green);
+    /* fixed properties */
+    border: 0!important;
+    width: 100%!important;
+    margin: 0!important;
+    height: 20px!important;
+    padding: 0!important;
+}
+
+.annotator-hl-annotator_color_yellow {
+    background: var(--yellow);
+    /* fixed properties */
+    cursor:pointer;
+    padding: 1px 3px;
+    border-radius: 2px;
+    border-style: solid!important;
+    border-width: 1px!important;
+    border-color: transparent;
+}
+
+.annotator_color_yellow {
+    background: var(--yellow);
+    /* fixed properties */
+    border: 0!important;
+    width: 100%!important;
+    margin: 0!important;
+    height: 20px!important;
+    padding: 0!important;
+}
+
+.annotator-hl-annotator_color_orange {
+    background: var(--orange);
+    /* fixed properties */
+    cursor:pointer;
+    padding: 1px 3px;
+    border-radius: 2px;
+    border-style: solid!important;
+    border-width: 1px!important;
+    border-color: transparent;
+}
+
+.annotator_color_orange {
+    background: var(--orange);
+    /* fixed properties */
+    border: 0!important;
+    width: 100%!important;
+    margin: 0!important;
+    height: 20px!important;
+    padding: 0!important;
+}
+
+.annotator-hl-annotator_color_red {
+    background: var(--red);
+    /* fixed properties */
+    cursor:pointer;
+    padding: 1px 3px;
+    border-radius: 2px;
+    border-style: solid!important;
+    border-width: 1px!important;
+    border-color: transparent;
+}
+
+.annotator_color_red {
+    background: var(--red);
+    /* fixed properties */
+    border: 0!important;
+    width: 100%!important;
+    margin: 0!important;
+    height: 20px!important;
+    padding: 0!important;
+}
+
+/* === END COLORS === */
+
+.hightlight {
+    background: #dfffbf;
+    border: 1px solid #b3b3b3;
+    height:20px;
+}
+
+.container-anotacions .search,
+a.annotator-panel-reset,
+.container-anotacions .checkbox-inline:nth-child(1){
+    display: none!important;
+}
+
+.annotator-adder,
+.annotator-adder button{
+    transition: 0s!important;
+}
+
+.annotator-item.annotator-radio span {
+    display: none;
+}
+
+.square {
+    border-radius: 50%!important;
+    width: 13px!important;
+    height: 12px!important;
+    margin-top: -5.5px!important;
+    /*border: 1px solid rgb(222, 222, 222)!important;*/
+    border: 0!important;
+}
+
+.annotator-editor a.annotator-panel-save::after {
+    background-position: 0 -119px!important;
+}
+
+.annotator-item.annotator-radio {
+    padding: 10px 5px 5px;
+}
+
+.annotator-panel-cancel,
+.annotator-cancel {
+    float: left;
+    margin: 0px 0px 8px 5px;
+}
+
+.annotator-panel-save,
+.annotator-save{
+    float: right;
+    margin: 0px 5px 8px 0px;
+}
+
+.annotator-panel-cancel,
+.annotator-panel-save{
+    margin-top: 9px!important;
+}
+
+.annotator-checkbox label,
+#annotator-field-1{
+    vertical-align: middle;
+}
+
+.annotator-radio label:nth-child(even) {
+    margin-right: 7px;
+}
+
+span.rotate{
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+input#type_share {
+    margin-top: 1px;
+}
+
+.filter-panel {
+    margin-bottom: 10px;
+}
+
+.annotator-marginviewer-text {
+    padding: 0;
+}
+
+label.checkbox-inline {
+    margin-left: 1px!important;
+}
+
+.anotador_text{
+    padding: 18px 5px 4px 5px;
+}
+
+span.annotator-controls {
+    margin-left: 10px!important;
+    margin-top: -1px!important;
+    margin-right: -5px!important;
+    padding-right: 8px!important;
+    background-color: white!important;
+}
+
+#anotacions-uoc-panel{
+    font-size: 90%!important;
+}
+
+.container-anotacions {
+    min-width: 247px;
+}
+
+.annotator-marginviewer-date {
+    clear: both;
+    border-top: 1px solid #cccccc;
+}
+
+.annotator-textarea-controls.annotator-editor {
+    margin-top: -6px;
+}
+
+.annotator-annotation.annotator-item div:nth-child(3){
+    max-height: 200px;
+    overflow-y: auto;
+    line-height: 17px!important;
+    border: 0!important;
+}
+
+.annotator-controls {
+    display: flow-root;
+    margin-top: 3px;
+}
+
+button.annotator-delete,
+button.annotator-edit {
+    display: block;
+}
+
+button.annotator-delete{
+    margin-top: 5px!important;
+}
+
+.annotator-marginviewer-quote:before {
+    content: "Text Annotated:";
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.annotator-invert-y a.annotator-save,
+.annotator-invert-y a.annotator-cancel {
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 767px) {
+
+    .annotations-list-uoc{
+        top:1em!important;
+        height: 90%!important;
+        right: 0!important;
+    }
+
+    li.annotator-item.annotator-item-quote{
+        display: none!important;
+    }
+
+    span.rotate{
+        left: -58px!important;
+        top: 7.8em!important;
+    }
+
+    .annotator-touch-widget {
+        border: 0!important;
+    }
+
+    .annotator-touch-controls {
+        bottom: 7px;
+    }
+
+    a.annotator-button.annotator-add.annotator-focus {
+        line-height: 2!important;
+        text-decoration: none!important;
+        width: 100%!important;
+    }
+
+    .annotator-touch-viewer .annotator-touch-controls button{
+        line-height: 1.7!important;
+    }
+
+    .annotator-controls a {
+        line-height: 2!important;
+        margin-top: 7px;
+    }
+
+    .annotator-touch-viewer li.annotator-visible .annotator-touch-controls{
+        background: none!important;
+        position: absolute!important;
+        top: 69%!important;
+        margin-left: 26%!important;
+        height: 24px!important;
+    }
+
+    button.annotator-delete.annotator-button {
+        margin-top: 0px!important;
+    }
+}

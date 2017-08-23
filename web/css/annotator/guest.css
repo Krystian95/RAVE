@@ -1,0 +1,10 @@
+
+.annotator-adder,
+li.filter-panel,
+span.annotator-controls,
+button.annotator-delete,
+button.annotator-edit,
+.annotator-viewer-edit,
+.annotator-viewer-delete{
+    display: none!important;
+}

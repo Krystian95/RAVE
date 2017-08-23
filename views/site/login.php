@@ -11,7 +11,7 @@ $this->title = 'RAVE - Login';
 <div class="site-login">
     <h1>Login</h1>
 
-    <p>Please fill out the following fields to login:</p>
+    <p><br>Please fill out the following fields to login:</p>
 
     <?php
     $form = ActiveForm::begin([

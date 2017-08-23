@@ -10,6 +10,9 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '5n6b7ev4w5c3v4b65n7d',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ]
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -49,11 +52,11 @@ $config = [
 
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
-    /* $config['bootstrap'][] = 'debug';
-      $config['modules']['debug'] = 'yii\debug\Module';
+    $config['bootstrap'][] = 'debug';
+    $config['modules']['debug'] = 'yii\debug\Module';
 
-      $config['bootstrap'][] = 'gii';
-      $config['modules']['gii'] = 'yii\gii\Module'; */
+    $config['bootstrap'][] = 'gii';
+    $config['modules']['gii'] = 'yii\gii\Module';
 }
 
 return $config;

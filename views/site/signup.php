@@ -11,6 +11,7 @@ $this->title = 'RAVE - Signup';
 <div class="site-signup">
     <h1>Signup</h1>
 
+    <p><br>Do you want to Annotate the pages? Signup to our site!</p>
     <p>Please fill out the following fields to signup:</p>
 
     <div class="row">

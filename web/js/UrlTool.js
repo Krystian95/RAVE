@@ -32,20 +32,21 @@ UrlTool.prototype.createSearchUrl = function () {
 
 UrlTool.prototype.replaceUrlLinks = function (container) {
 
-    var homeUrl = $('#homeUrl').val()
+    var homeUrl = $('#homeUrl').val();
 
-    $(container + " a:not(.external)").each(function () {
+    $(container + " a:not(.external):not(.new_version_page_link)").each(function () {
 
         var currentUrl = $(this).attr('href');
 
-        if (!currentUrl.includes("#cite_note") && !currentUrl.includes("File:")) {
-            var currentUrlSplitted = currentUrl.split('/');
-            var pageTitle = currentUrlSplitted[currentUrlSplitted.length - 1];
-            var finalUrl = homeUrl + 'articles/article?title=' + pageTitle;
+        if (typeof currentUrl !== 'undefined') {
+            if (!currentUrl.includes("#cite_note") && !currentUrl.includes("File:")) {
+                var currentUrlSplitted = currentUrl.split('/');
+                var pageTitle = currentUrlSplitted[currentUrlSplitted.length - 1];
+                var finalUrl = homeUrl + 'articles/article?title=' + pageTitle;
 
-            $(this).attr('href', finalUrl)
+                $(this).attr('href', finalUrl);
+            }
         }
-
     });
 
 };

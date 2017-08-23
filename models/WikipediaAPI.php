@@ -4,6 +4,7 @@ namespace app\models;
 
 use yii\base\Model;
 use Yii;
+use yii\db\Query;
 
 /**
  * ContactForm is the model behind the contact form.
@@ -185,7 +186,7 @@ class WikipediaAPI extends Model {
         return $articles_titles;
     }
 
-    public function getArticle() {
+    public function getArticle($newer = null) {
 
         $pageTitle = $this->title;
 
@@ -199,7 +200,57 @@ class WikipediaAPI extends Model {
 
         $response = $this->buildArticleResponse($api_result);
 
+        if (!$newer) {
+            if (isset($response['revisionId'])) {
+                if (($this->getRevisionIdIfAnnotated($response['pageId']) != $response['revisionId'] && $this->getRevisionIdIfAnnotated($response['pageId']) != null)) {
+                    $old_atricle = $this->getOldArticle($response['revisionId']);
+                    $old_atricle['newLink'] = Yii::$app->getHomeUrl() . 'articles/article?title=' . $pageTitle . '&revision=newer';
+                    return $old_atricle;
+                } else {
+                    $response['newLink'] = null;
+                }
+            }
+        } else {
+            $response['newLink'] = null;
+        }
+
         return $response;
+    }
+
+    public function getOldArticle($revision_id) {
+
+        /*
+         * https://en.wikipedia.org/wiki/Special:ApiSandbox#action=parse&format=json&oldid=636165877&prop=text%7Crevid&mobileformat=1&noimages=1
+         */
+        $api_call = '?action=parse&format=json&oldid=' . $revision_id . '&prop=text%7Crevid&mobileformat=1&noimages=1';
+
+        $api_result = $this->getAPIResult($api_call);
+
+        $response = $this->buildArticleResponse($api_result);
+
+        return $response;
+    }
+
+    private function getRevisionIdIfAnnotated($pageId) {
+
+        $query = new Query;
+        $annotations = $query
+                ->select('article_revision_id')
+                ->from([
+                    'annotation'
+                ])
+                ->where([
+                    'page_id' => $pageId,
+                ])
+                ->all();
+
+        $article_revision_ids = array_column($annotations, 'article_revision_id');
+
+        if (sizeof($article_revision_ids) > 0) {
+            return $article_revision_ids[0];
+        } else {
+            return null;
+        }
     }
 
     private function buildArticleResponse($api_result) {
