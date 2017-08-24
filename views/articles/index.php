@@ -17,7 +17,8 @@ if (isset($article_text) || isset($article_error)) {
                 'article_revisionId' => $article_revisionId,
                 'article_text' => $article_text,
                 'username_logged_in' => $username_logged_in,
-                'crossref' => $crossref
+                'crossref' => $crossref,
+                'google_maps' => $google_maps
             ]);
         } else {
 

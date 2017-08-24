@@ -7,6 +7,7 @@ use app\assets\SpecificViewerAsset;
 use app\assets\AnnotatorAsset;
 use app\assets\AnnotatorGuestAsset;
 use app\components\CrossrefWidget;
+use app\components\GoogleMapsWidget;
 use Yii;
 
 class SpecificViewerWidget extends Widget {
@@ -18,6 +19,7 @@ class SpecificViewerWidget extends Widget {
     public $username_logged_in;
     public $article_new_link;
     public $crossref;
+    public $google_maps;
 
     public function init() {
         parent::init();
@@ -85,7 +87,13 @@ HTML;
         <h3>YouTube</h3>
     </div>
     <div id="GoogleMaps" class="tab-pane fade">
-        <h3>Google Maps</h3>
+HTML;
+        $html .= GoogleMapsWidget::widget([
+                    'google_maps' => $this->google_maps,
+                    'keyword' => $this->article_title
+        ]);
+
+        $html .= <<<HTML
     </div>
 </div>
 HTML;

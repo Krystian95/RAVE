@@ -4,6 +4,7 @@
 $this->title = 'RAVE';
 use app\components\PostListWidget;
 ?>
+
 <div class="site-index">
 
     <?php

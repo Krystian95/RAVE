@@ -3,6 +3,7 @@
 namespace app\models;
 
 use app\models\WikipediaAPI;
+use app\models\GoogleMapsAPI;
 use app\models\CrossrefAPI;
 use yii\base\Model;
 use app\models\MainCategory;
@@ -33,11 +34,18 @@ class Article extends Model {
         }
 
         if ($article['of_main_category']) {
+            
             $crossref_api = new CrossrefAPI($this->title);
             $cossref_results = $crossref_api->getResults();
             $article['crossref'] = $cossref_results;
+            
+            
+            $google_maps_api = new GoogleMapsAPI($this->title);
+            $google_maps_result = $google_maps_api->getResults();
+            $article['google_maps'] = $google_maps_result;
         } else {
             $article['crossref'] = null;
+            $article['google_maps'] = null;
         }
 
         return $article;

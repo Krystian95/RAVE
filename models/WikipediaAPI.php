@@ -77,6 +77,7 @@ class WikipediaAPI extends Model {
                     $response_snippet = [
                         'snippet' => $snippet
                     ];
+
                     $response_element = array_merge($response_element, $response_snippet);
                 }
 
@@ -142,6 +143,12 @@ class WikipediaAPI extends Model {
             }
         }
 
+        for ($i = 0; $i < count($response); $i++) {
+            if ($response[$i]['title'] === $this->category) {
+                unset($response[$i]);
+            }
+        }
+
         return $response;
     }
 
@@ -166,7 +173,14 @@ class WikipediaAPI extends Model {
         $api_result = $api->getAPIResult($api_call);
 
         $items = $api_result['query']['categorymembers'];
+
         $articles_titles = array_column($items, 'title');
+
+        for ($i = 0; $i < count($articles_titles); $i++) {
+            if ($articles_titles[$i] === $categoryName) {
+                unset($articles_titles[$i]);
+            }
+        }
 
         return $articles_titles;
     }
