@@ -19,7 +19,7 @@ var feetMultiplicator = null;
 google.load("visualization", "1", {packages: ["columnchart"]});
 
 // Runs after page is loaded.
-$(document).on('ready pjax:success', function () {
+$(document).on('ready', function () {
 
     var from = getURLParameter('from');
     var to = getURLParameter('to');

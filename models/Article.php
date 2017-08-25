@@ -34,12 +34,11 @@ class Article extends Model {
         }
 
         if ($article['of_main_category']) {
-            
+
             $crossref_api = new CrossrefAPI($this->title);
             $cossref_results = $crossref_api->getResults();
             $article['crossref'] = $cossref_results;
-            
-            
+
             $google_maps_api = new GoogleMapsAPI($this->title);
             $google_maps_result = $google_maps_api->getResults();
             $article['google_maps'] = $google_maps_result;

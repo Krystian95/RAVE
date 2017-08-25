@@ -3,12 +3,23 @@
 namespace app\controllers;
 
 use app\models\Article;
+use app\models\YouTubeAPI;
 use Yii;
 
 class ArticlesController extends \yii\web\Controller {
 
     public function actionIndex() {
         return $this->render('index');
+    }
+
+    public function actionYouTube($query) {
+
+        $youtube_api = new YouTubeAPI($query);
+        $youtube_result = $youtube_api->getResults();
+
+        return $this->renderAjax('youtube', [
+                    'youtube' => $youtube_result
+        ]);
     }
 
     public function actionArticle($title, $newer = null) {

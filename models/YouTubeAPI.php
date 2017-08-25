@@ -3,14 +3,13 @@
 namespace app\models;
 
 use yii\base\Model;
-use Yii;
 
 /**
  * ContactForm is the model behind the contact form.
  */
-class GoogleMapsAPI extends Model {
+class YouTubeAPI extends Model {
 
-    private $baseUrl = 'https://maps.googleapis.com/maps/api/geocode/json';
+    private $baseUrl = 'https://www.googleapis.com/youtube/v3/search';
     private $key = 'AIzaSyAy9WVj2-ghraoUb-lmkp7HcP6QLBwhEiY';
     private $query;
 
@@ -21,26 +20,29 @@ class GoogleMapsAPI extends Model {
     public function getResults() {
 
         $queryForUrl = urlencode($this->query);
+        $limit = 12;
 
-        $api_call = '?address=' . $queryForUrl . '&key=' . $this->key;
+        $api_call = '?part=snippet&q=' . $queryForUrl . '&order=relevance&maxResults='.$limit.'&key='.$this->key;
 
         $api = new API($this->baseUrl);
         $api_result = $api->getAPIResult($api_call);
 
         $response = $this->buildResultsResponse($api_result);
-        $response['keyword'] = $this->query;
 
         return $response;
     }
 
     private function buildResultsResponse($api_result) {
 
-        if (isset($api_result['results'])) {
+        if (isset($api_result['items'])) {
+            
+            $videos = $api_result['items'];
 
-            $response = [
-                'lat' => $api_result['results'][0]['geometry']['location']['lat'],
-                'lng' => $api_result['results'][0]['geometry']['location']['lng']
-            ];
+            $response = [];
+            
+            foreach ($videos as $video) {
+                array_push($response, $video['id']['videoId']);
+            }
 
             return $response;
         } else {

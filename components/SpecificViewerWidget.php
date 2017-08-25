@@ -6,8 +6,9 @@ use yii\base\Widget;
 use app\assets\SpecificViewerAsset;
 use app\assets\AnnotatorAsset;
 use app\assets\AnnotatorGuestAsset;
-use app\components\CrossrefWidget;
 use app\components\GoogleMapsWidget;
+use yii\helpers\Html;
+use yii\helpers\Url;
 use Yii;
 
 class SpecificViewerWidget extends Widget {
@@ -43,7 +44,6 @@ class SpecificViewerWidget extends Widget {
     <input type="hidden" id="username_logged_in" value="{$this->username_logged_in}" />
     <h1 class="main-title">{$this->article_title}</h1>
 HTML;
-
         if ($this->article_new_link !== null) {
             $html .= <<<HTML
     <p class="alert alert-warning" role="alert">
@@ -59,9 +59,21 @@ HTML;
 <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#Article">Article</a></li>
     <li><a data-toggle="tab" href="#Crossref">Crossref</a></li>
-    <li><a data-toggle="tab" href="#Twitter">Twitter</a></li>
-    <li><a data-toggle="tab" href="#YouTube">YouTube</a></li>
     <li><a data-toggle="tab" href="#GoogleMaps">Google Maps</a></li>
+    <li><a data-toggle="tab" href="#Twitter">Twitter</a></li>
+    <li>
+HTML;
+        $html .= Html::a('YouTube', Url::toRoute([
+                            'you-tube',
+                            'query' => $this->article_title
+                        ]), [
+                    'id' => 'YouTubeLink',
+                    'class' => 'tab_opener',
+                    'data-destination' => '#YouTube'
+        ]);
+
+        $html .= <<<HTML
+    </li>
 </ul>
                 
 <div class="tab-content">
@@ -79,22 +91,17 @@ HTML;
         ]);
 
         $html .= <<<HTML
-    </div>
-    <div id="Twitter" class="tab-pane fade">
-        <h3>Twitter</h3>
-    </div>
-    <div id="YouTube" class="tab-pane fade">
-        <h3>YouTube</h3>
-    </div>
-    <div id="GoogleMaps" class="tab-pane fade">
+        </div>
+        <div id = "Twitter" class = "tab-pane fade"></div>
+        <div id = "YouTube" class = "tab-pane fade"></div>
+        <div id = "GoogleMaps" class = "tab-pane fade" >
 HTML;
         $html .= GoogleMapsWidget::widget([
-                    'google_maps' => $this->google_maps,
-                    'keyword' => $this->article_title
+                    'google_maps' => $this->google_maps
         ]);
 
         $html .= <<<HTML
-    </div>
+   </div>
 </div>
 HTML;
 

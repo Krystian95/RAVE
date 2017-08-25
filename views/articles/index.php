@@ -1,7 +1,9 @@
 <?php
+
 /* @var $this yii\web\View */
 use app\components\GenericViewerWidget;
 use app\components\SpecificViewerWidget;
+use yii\widgets\Pjax;
 
 $this->title = 'RAVE';
 
@@ -10,6 +12,13 @@ if (isset($article_text) || isset($article_error)) {
     if (isset($article_text)) {
 
         if ($article_of_main_category) {
+
+            Pjax::begin([
+                'linkSelector' => '#YouTubeLink',
+                'timeout' => 50000,
+                'scrollTo' => false,
+                'clientOptions' => ['container' => '#YouTube', 'skipOuterContainers' => true]
+            ]);
 
             echo SpecificViewerWidget::widget([
                 'article_title' => $article_title,
@@ -20,6 +29,8 @@ if (isset($article_text) || isset($article_error)) {
                 'crossref' => $crossref,
                 'google_maps' => $google_maps
             ]);
+
+            Pjax::end();
         } else {
 
             echo GenericViewerWidget::widget([

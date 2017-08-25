@@ -8,7 +8,6 @@ use app\assets\GoogleMapsAsset;
 class GoogleMapsWidget extends Widget {
 
     public $google_maps;
-    public $keyword;
 
     public function init() {
         parent::init();
@@ -32,33 +31,33 @@ class GoogleMapsWidget extends Widget {
                     </div>
                     <div id="from-to-switcher"></div>
                     <div class="place-input">
-                        <input class="form-control" id="to" type="text" placeholder="Type your destination" value="{$this->keyword}">
+                        <input class="form-control" id="to" type="text" placeholder="Type your destination" value="{$this->google_maps['keyword']}">
                     </div>
                     <div class="row place-input selector-wrapper">
-                            <select class="form-control" id="travel-mode">
-                                <option>Bicycling</option>
-                                <option>Walking</option>
-                                <option selected>Driving</option>
-                            </select>
-                            <select class="form-control" id="measurement-mode">
-                                <option value="miles">Miles</option>
-                                <option value="km" selected>Kilometres</option>
-                            </select>
+                        <select class="form-control" id="travel-mode">
+                            <option>Bicycling</option>
+                            <option>Walking</option>
+                            <option selected>Driving</option>
+                        </select>
+                        <select class="form-control" id="measurement-mode">
+                            <option value="miles">Miles</option>
+                            <option value="km" selected>Kilometres</option>
+                        </select>
                     </div>
                     <div class="row place-input">
                         <button class="btn btn-primary" type="submit" id="go">Calculate Travel</button>
-        <div id="path-result">
-            <div class="row travel-info">
-                <b>Distance</b>:
-                <span id="distance"></span>
-            </div>
-            <div class="row travel-info">
-                <div id="travel-label">
-                    <b>Travel Time</b>:
-                    <span id="travel-time"></span>
-                </div>
-            </div>
-        </div>
+                        <div id="path-result">
+                            <div class="row travel-info">
+                                <b>Distance</b>:
+                                <span id="distance"></span>
+                            </div>
+                            <div class="row travel-info">
+                                <div id="travel-label">
+                                    <b>Travel Time</b>:
+                                    <span id="travel-time"></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>
