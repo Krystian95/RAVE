@@ -17,7 +17,7 @@ if (isset($article_text) || isset($article_error)) {
                 'linkSelector' => '#YouTubeLink',
                 'timeout' => 50000,
                 'scrollTo' => false,
-                'clientOptions' => ['container' => '#YouTube', 'skipOuterContainers' => true]
+                'clientOptions' => ['container' => '#YouTube']
             ]);
 
             echo SpecificViewerWidget::widget([

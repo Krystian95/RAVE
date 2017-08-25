@@ -1039,8 +1039,10 @@ var annotatorObj;
             /*
              * Adjust HTML element Classes and Id
              */
-            annotation.highlights[0].className = 'annotator-hl annotator-hl-' + annotation.category;
-            annotation.highlights[0].id = annotation.id;
+            for (var j = 0; j < annotation.highlights.length; j++) {
+                annotation.highlights[j].className = 'annotator-hl annotator-hl-' + annotation.category;
+                annotation.highlights[j].id = annotation.id;
+            }
 
             $(annotation.highlights).data("annotation", annotation);
             return annotation;

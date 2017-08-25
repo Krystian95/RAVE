@@ -34,7 +34,7 @@ class Annotation extends \yii\db\ActiveRecord
         return [
             [['IdAnnotation', 'annotation', 'user_id', 'article_revision_id', 'page_id'], 'required'],
             [['IdAnnotation', 'user_id', 'global_visibility'], 'integer'],
-            [['annotation'], 'string', 'max' => 1225],
+            [['annotation'], 'string'],
             [['article_revision_id', 'page_id'], 'string', 'max' => 45],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];

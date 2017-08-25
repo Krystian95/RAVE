@@ -39,7 +39,7 @@ class Annotations extends Model {
         return $annotations;
     }
 
-    public function createNewAnnotation($annotation_id, $annotationInput, $user_id, $article_id,$article_revision_id, $global_visibility) {
+    public function createNewAnnotation($annotation_id, $annotationInput, $user_id, $article_id, $article_revision_id, $global_visibility) {
 
         $annotation = Annotation::findOne([
                     'IdAnnotation' => $annotation_id,
@@ -54,10 +54,10 @@ class Annotations extends Model {
             $annotation->article_revision_id = $article_revision_id;
 
             if ($global_visibility === null) {
-                /* TRUE (public annotation) */
+                // TRUE (public annotation)
                 $annotation->global_visibility = 1;
             } else {
-                /* FALSE (private annotation) */
+                // FALSE (private annotation)
                 $annotation->global_visibility = 0;
             }
         }

@@ -18,7 +18,7 @@ AjaxCaller.prototype.censor = function (censor) {
             return '[Circular]';
 
         if (i >= 29) // seems to be a harded maximum of 30 serialized objects?
-            return '[Unknown]';
+            return value;
 
         ++i; // so we know we aren't using the original object anymore
 
@@ -66,7 +66,7 @@ AjaxCaller.prototype.loadAnnotations = function () {
 };
 
 AjaxCaller.prototype.createAnnotation = function (annotationInput) {
-    
+
     var annotation = JSON.stringify(annotationInput, this.censor(annotationInput));
     
     $.ajax({

@@ -28,7 +28,7 @@ AppAsset::register($this);
         <div class="wrap">
             <?php
             NavBar::begin([
-                'brandLabel' => 'RAVE',
+                'brandLabel' => '',
                 'brandUrl' => ['/site'],
                 'brandOptions' => [
                     'class' => 'site-title'
@@ -50,6 +50,8 @@ AppAsset::register($this);
             </div>
 
             <?php
+            $menuItems[] = ['label' => 'Credits', 'url' => ['/site/credits']];
+
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
@@ -68,11 +70,11 @@ AppAsset::register($this);
             ?>
 
             <div class="container"> 
-                <?=
-                Breadcrumbs::widget([
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                ])
-                ?>
+<?=
+Breadcrumbs::widget([
+    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+])
+?>
                 <?= $content ?>
             </div>
         </div>
@@ -82,12 +84,13 @@ AppAsset::register($this);
                 <p class="pull-left">&copy; RAVE <?= date('Y') ?></p>
                 <p class="pull-right">Powered by
                     <a href="mailto:cristian.romanello@studio.unibo.it" target="_blank">Cristian Romanello</a> e 
-                    <a href="mailto:lorenzo.lanzarone@studio.unibo.it" target="_blank">Lorenzo Lanzarone</a>
+                    <a href="mailto:lorenzo.lanzarone@studio.unibo.it" target="_blank">Lorenzo Lanzarone</a>, 
+                    <a href="<?php echo Yii::$app->getHomeUrl(); ?>site/credits"><i>Credits</i></a>
                 </p>
             </div>
         </footer>
 
-        <?php $this->endBody() ?>
+<?php $this->endBody() ?>
     </body>
 </html>
 <?php $this->endPage() ?>

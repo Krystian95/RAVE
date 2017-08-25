@@ -22,7 +22,7 @@ class YouTubeAPI extends Model {
         $queryForUrl = urlencode($this->query);
         $limit = 12;
 
-        $api_call = '?part=snippet&q=' . $queryForUrl . '&order=relevance&maxResults='.$limit.'&key='.$this->key;
+        $api_call = '?part=snippet&q=' . $queryForUrl . '&order=relevance&maxResults=' . $limit . '&key=' . $this->key;
 
         $api = new API($this->baseUrl);
         $api_result = $api->getAPIResult($api_call);
@@ -35,13 +35,15 @@ class YouTubeAPI extends Model {
     private function buildResultsResponse($api_result) {
 
         if (isset($api_result['items'])) {
-            
+
             $videos = $api_result['items'];
 
             $response = [];
-            
+
             foreach ($videos as $video) {
-                array_push($response, $video['id']['videoId']);
+                if (isset($video['id']['videoId'])) {
+                    array_push($response, $video['id']['videoId']);
+                }
             }
 
             return $response;

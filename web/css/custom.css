@@ -36,7 +36,16 @@ body{
 }
 
 .site-title{
-    color: #ffa500!important;
+    background-image: url(images/logo.png);
+    width: 100px;
+    background-position: center;
+    background-size: 81px 26px;
+    margin-top: -0.8px;
+    background-repeat: no-repeat;
+}
+
+.site-title:hover{
+    background-image: url(images/logo_hover.png);
 }
 
 .site-title:hover{
@@ -137,6 +146,10 @@ nav#w0 {
 
     .topper_article {
         margin-top: 0!important;
+    }
+
+    .site-title{
+        margin-top: 0px;
     }
 
     /* MENU */

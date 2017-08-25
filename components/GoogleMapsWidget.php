@@ -27,11 +27,11 @@ class GoogleMapsWidget extends Widget {
             <form id="routes">
                 <div id="target" class="place-inputs">
                     <div class="place-input">
-                        <input class="form-control" id="from" type="text" placeholder="Type a place to start your journey">
+                        <input class="form-control" id="from" type="text" placeholder="Type the place to start">
                     </div>
                     <div id="from-to-switcher"></div>
                     <div class="place-input">
-                        <input class="form-control" id="to" type="text" placeholder="Type your destination" value="{$this->google_maps['keyword']}">
+                        <input class="form-control" id="to" type="text" placeholder="Type the destination" value="{$this->google_maps['keyword']}">
                     </div>
                     <div class="row place-input selector-wrapper">
                         <select class="form-control" id="travel-mode">

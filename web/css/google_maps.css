@@ -11,7 +11,7 @@
 #measurement-mode {
     width: 38%;
     float: left;
-    margin-left: 16px;
+    margin-left: 15px;
 }
 
 #measurement-mode {
@@ -113,6 +113,10 @@ form #from-to-switcher {
     -o-transform: rotate(90deg);
     transform: rotate(90deg);
     width: 17px;
+}
+
+form #from-to-switcher:hover {
+    cursor: pointer;
 }
 
 form #from-to-switcher:hover:after {

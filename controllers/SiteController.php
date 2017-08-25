@@ -81,6 +81,11 @@ class SiteController extends Controller {
 
         return $this->goHome();
     }
+    
+    public function actionCredits() {
+
+        return $this->render('credits');
+    }
 
     public function actionSignup() {
 
