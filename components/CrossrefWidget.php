@@ -95,6 +95,10 @@ class CrossrefWidget extends Widget {
                 $html .= '<br><span class="ISBN-label">ISBN</span>: <span class="ISBN">' . $result['ISBN'] . '</span>';
             }
 
+            if (isset($result['link'])) {
+                $html .= '<a href="' . $result['link'] . '" target="_blank"><img class="right_arrow"/></a>';
+            }
+
             $html .= '</div>';
         }
 

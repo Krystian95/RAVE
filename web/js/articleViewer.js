@@ -1,5 +1,5 @@
 
-$(document).on('ready pjax:success', function () {
+$(document).on('ready', function () {
 
     $('a.external').attr('target', '_blank');
 

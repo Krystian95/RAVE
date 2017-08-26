@@ -23,7 +23,6 @@ class GenericViewerWidget extends Widget {
         GenericViewerAsset::register($this->getView());
         AnnotatorAsset::register($this->getView());
 
-
         if (Yii::$app->user->isGuest) {
             AnnotatorGuestAsset::register($this->getView());
         }

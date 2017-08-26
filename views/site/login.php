@@ -11,7 +11,8 @@ $this->title = 'RAVE - Login';
 <div class="site-login">
     <h1>Login</h1>
 
-    <p><br>Please fill out the following fields to login:</p>
+    <p><br>Do you want to Annotate the pages? Login!</p>
+    <p>Please fill out the following fields to login:</p>
 
     <?php
     $form = ActiveForm::begin([
@@ -36,9 +37,9 @@ $this->title = 'RAVE - Login';
 
     <div class="form-group">
         <div class="col-lg-offset-1 col-lg-11">
-    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+            <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
         </div>
     </div>
 
-<?php ActiveForm::end(); ?>
+    <?php ActiveForm::end(); ?>
 </div>

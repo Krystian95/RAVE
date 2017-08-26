@@ -5,6 +5,7 @@ namespace app\models;
 use app\models\WikipediaAPI;
 use app\models\GoogleMapsAPI;
 use app\models\CrossrefAPI;
+use app\models\TwitterAPI;
 use yii\base\Model;
 use app\models\MainCategory;
 
@@ -42,9 +43,14 @@ class Article extends Model {
             $google_maps_api = new GoogleMapsAPI($this->title);
             $google_maps_result = $google_maps_api->getResults();
             $article['google_maps'] = $google_maps_result;
+
+            $twitter_api = new TwitterAPI($this->title);
+            $twitter_result = $twitter_api->getResults();
+            $article['twitter'] = $twitter_result;
         } else {
             $article['crossref'] = null;
             $article['google_maps'] = null;
+            $article['twitter'] = null;
         }
 
         return $article;

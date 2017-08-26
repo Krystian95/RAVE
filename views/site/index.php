@@ -6,6 +6,14 @@ use app\components\PostListWidget;
 ?>
 
 <div class="site-index">
+    
+    <div class="intro">
+        
+        <h1>Welcome to RAVE</h1>
+        
+        <p>.........</p>
+        
+    </div>
 
     <?php
     if (isset($posts) && isset($category)) {

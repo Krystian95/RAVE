@@ -91,6 +91,30 @@ span.glyphicon.glyphicon-share.light-gray {
     font-size: inherit!important;
 }
 
+#alert-intro{
+    display: none;
+}
+
+.alert-success {
+    color: #3c763d!important;
+    background-color: #dff0d8!important;
+    border-color: #d6e9c6!important;
+    margin: 0px auto 30px auto!important;
+    width: 930px;
+    border: 1px solid #bee2af!important;
+}
+
+.alert h4 {
+    margin-top: 0;
+    color: inherit;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.alert.into a{
+    font-weight: bold;
+}
+
 @media (max-width: 769px) {
     .tab-pane {
         width: 100%!important;

@@ -8,3 +8,7 @@ button.annotator-edit,
 .annotator-viewer-delete{
     display: none!important;
 }
+
+#alert-intro{
+    display: block!important;
+}

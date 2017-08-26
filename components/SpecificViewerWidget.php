@@ -7,6 +7,7 @@ use app\assets\SpecificViewerAsset;
 use app\assets\AnnotatorAsset;
 use app\assets\AnnotatorGuestAsset;
 use app\components\GoogleMapsWidget;
+use app\components\TwitterWidget;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use Yii;
@@ -21,6 +22,7 @@ class SpecificViewerWidget extends Widget {
     public $article_new_link;
     public $crossref;
     public $google_maps;
+    public $twitter;
 
     public function init() {
         parent::init();
@@ -44,6 +46,10 @@ class SpecificViewerWidget extends Widget {
     <input type="hidden" id="username_logged_in" value="{$this->username_logged_in}" />
     <h1 class="main-title">{$this->article_title}</h1>
 HTML;
+        //if (Yii::$app->user->isGuest) {
+            $html .= include Yii::getAlias('@GuestAdvice');
+        //}
+
         if ($this->article_new_link !== null) {
             $html .= <<<HTML
     <p class="alert alert-warning" role="alert">
@@ -92,7 +98,14 @@ HTML;
 
         $html .= <<<HTML
         </div>
-        <div id = "Twitter" class = "tab-pane fade"></div>
+        <div id = "Twitter" class = "tab-pane fade">
+HTML;
+        $html .= TwitterWidget::widget([
+                    'twitter' => $this->twitter
+        ]);
+
+        $html .= <<<HTML
+        </div>
         <div id = "YouTube" class = "tab-pane fade"></div>
         <div id = "GoogleMaps" class = "tab-pane fade" >
 HTML;

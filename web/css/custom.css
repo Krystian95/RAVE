@@ -81,6 +81,20 @@ nav#w0 {
     margin-left: 8.5%!important;
 }
 
+/* HOME */
+
+.site-index .intro h1{
+    text-align: center;
+}
+
+.site-index .intro p{
+    text-align: center;
+}
+
+.site-index .intro{
+    margin-bottom: 30px;
+}
+
 /* SEARCH BAR */
 
 .ui-autocomplete-loading {

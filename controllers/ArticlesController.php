@@ -43,7 +43,8 @@ class ArticlesController extends \yii\web\Controller {
                         'username_logged_in' => Yii::$app->user->identity['username'],
                         'article_new_link' => $article['newLink'],
                         'crossref' => $article['crossref'],
-                        'google_maps' => $article['google_maps']
+                        'google_maps' => $article['google_maps'],
+                        'twitter' => $article['twitter']
             ]);
         } else if (isset($article['error'])) {
 

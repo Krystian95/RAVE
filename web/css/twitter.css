@@ -1,48 +1,45 @@
 
-.crossref-results .result .authors-label,
-.crossref-results .result .date_time-label,
-.crossref-results .result .ISBN-label,
-.crossref-results .result .title{
+.twitter-results .result .user{
     font-weight: bold;
 }
 
-.crossref-results .result .title{
+.twitter-results .result .title{
     color: #337ab7;
 }
 
-.crossref-results .result .title a:hover{
+.twitter-results .result .title a:hover{
     color: #ffa500!important;
 }
 
-.crossref-results .link{
+.twitter-results .link{
     text-decoration: none;
 }
 
-.crossref-results .author-affiliations{
+.twitter-results .user_country{
     font-style: italic;
 }
 
-.crossref-results .result {
-    border: 2px solid #ccc;
+.twitter-results .result {
+    border: 2px solid #15d4d4;
     padding: 13px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
-.crossref-results .result:nth-child(even) {
+.twitter-results .result:nth-child(even) {
     background-color: rgba(243, 242, 242, 0.57);
 }
 
-.crossref-results .result:hover {
+.twitter-results .result:hover {
     background-color: rgba(222, 220, 220, 0.70);
 }
 
-.crossref-results {
+.twitter-results {
     width: 700px;
     margin: 0px auto;
 }
 
-.crossref-results .right_arrow {
+.twitter-results .right_arrow {
     background-image: url(images/right_circle_arrow_twitter.png);
     background-repeat: no-repeat;
     width: 60px;
