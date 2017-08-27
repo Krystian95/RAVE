@@ -6,3 +6,38 @@
 .tab-pane{
     padding: 0px 15px;
 }
+
+.nav-tabs > li {
+    margin-bottom: -21px;
+}
+
+.nav-tabs li a div.img{
+    width: 25px;
+    height: 25px;
+    background-position: center;
+    background-size: 25px;
+    display: inline-block;
+    margin-right: 3px;
+    margin-top: -1px;
+    vertical-align: middle;
+}
+
+.nav-tabs li.Wikipedia a div.img{
+    background-image: url(images/nav-tabs/wikipedia2.png);
+}
+
+.nav-tabs li.Crossref a div.img{
+    background-image: url(images/nav-tabs/crossref.png);
+}
+
+.nav-tabs li.YouTube a div.img{
+    background-image: url(images/nav-tabs/youtube.png);
+}
+
+.nav-tabs li.GoogleMaps a div.img{
+    background-image: url(images/nav-tabs/googlemaps.png);
+}
+
+.nav-tabs li.Twitter a div.img{
+    background-image: url(images/nav-tabs/twitter.png);
+}

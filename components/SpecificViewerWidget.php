@@ -46,9 +46,7 @@ class SpecificViewerWidget extends Widget {
     <input type="hidden" id="username_logged_in" value="{$this->username_logged_in}" />
     <h1 class="main-title">{$this->article_title}</h1>
 HTML;
-        //if (Yii::$app->user->isGuest) {
-            $html .= include Yii::getAlias('@GuestAdvice');
-        //}
+        $html .= include Yii::getAlias('@GuestAdvice');
 
         if ($this->article_new_link !== null) {
             $html .= <<<HTML
@@ -63,13 +61,13 @@ HTML;
 
         $html .= <<<HTML
 <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#Article">Article</a></li>
-    <li><a data-toggle="tab" href="#Crossref">Crossref</a></li>
-    <li><a data-toggle="tab" href="#GoogleMaps">Google Maps</a></li>
-    <li><a data-toggle="tab" href="#Twitter">Twitter</a></li>
-    <li>
+    <li class="active Wikipedia"><a data-toggle="tab" href="#Wikipedia"><div class="img"></div> Wikipedia</a></li>
+    <li class="Crossref"><a data-toggle="tab" href="#Crossref"><div class="img"></div> Crossref</a><img/></li>
+    <li class="GoogleMaps"><a data-toggle="tab" href="#GoogleMaps"><div class="img"></div> Google Maps</a></li>
+    <li class="Twitter"><a data-toggle="tab" href="#Twitter"><div class="img"></div> Twitter</a></li>
+    <li class="YouTube">
 HTML;
-        $html .= Html::a('YouTube', Url::toRoute([
+        $html .= Html::a(' YouTube', Url::toRoute([
                             'you-tube',
                             'query' => $this->article_title
                         ]), [

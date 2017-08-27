@@ -40,6 +40,7 @@ class GenericViewerWidget extends Widget {
     <input type="hidden" id="username_logged_in" value="{$this->username_logged_in}" />
     <h1 class="main-title">{$this->article_title}</h1>
 HTML;
+        $html .= include Yii::getAlias('@GuestAdvice');
 
         if ($this->article_new_link !== null) {
             $html .= <<<HTML
