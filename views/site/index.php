@@ -13,7 +13,7 @@ use app\components\PostListWidget;
         <h2>Resources Annotator, Visualizer and Enhancer</h2>
         <br>
         <img class="aaa">
-        <br>
+        <br><br><br><br><br>
         <p>OBE is an integrated environment that allows the user to search topic and information about anything on Wikipedia. 
             Furthermore all the topics the users can find in the platform are mashed up together with related contents from 
             Youtube platform, Twitter, Google Maps, Spotify and if the content is about "English Rock Singer" category, we also 
