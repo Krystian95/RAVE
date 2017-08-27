@@ -85,15 +85,34 @@ nav#w0 {
 
 .site-index .intro h1{
     text-align: center;
+    color: rgb(125, 125, 125);
+}
+
+.site-index .intro h2{
+    text-align: center;
+    color: rgb(125, 125, 125);
 }
 
 .site-index .intro p{
-    text-align: center;
+    text-align: left;
 }
 
 .site-index .intro{
     margin-bottom: 30px;
 }
+
+.site-index .intro img.aaa {
+    background-image: url('images/logo.png');
+    background-size: 500px 164px;
+    background-position: center;
+    width: 500px;
+    height: 164px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
 
 /* SEARCH BAR */
 
