@@ -1,4 +1,6 @@
 
+/* global searchUrl */
+
 $(document).on('ready pjax:success', function () {
     setupMarker();
     setupPaginator();

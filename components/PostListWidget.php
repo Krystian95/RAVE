@@ -34,7 +34,7 @@ HTML;
                 }
 
                 $html .= <<<HTML
-                    <div class="col-md-3 post-container"><a href="{$post['url']}"><h3 data-id="{$post['id']}" class="post">{$post['title']} {$newer}</h3></a></div>
+                    <div class="col-md-3 post-container"><a href="{$post['url']}"><h3 data-id="{$post['id']}" data-title="{$post['title']}" class="post"><div data-id="{$post['id']}" class="flag"></div> {$post['title']} {$newer}</h3></a></div>
 HTML;
             }
         } else {
