@@ -8,6 +8,8 @@ use app\assets\AnnotatorAsset;
 use app\assets\AnnotatorGuestAsset;
 use app\components\GoogleMapsWidget;
 use app\components\TwitterWidget;
+use app\assets\YouTubeSpecificViewerAsset;
+use app\components\D3Widget;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use Yii;
@@ -23,6 +25,7 @@ class SpecificViewerWidget extends Widget {
     public $crossref;
     public $google_maps;
     public $twitter;
+    public $d3;
 
     public function init() {
         parent::init();
@@ -62,7 +65,7 @@ HTML;
         $html .= <<<HTML
 <ul class="nav nav-tabs">
     <li class="active Wikipedia"><a data-toggle="tab" href="#Wikipedia"><div class="img"></div> Wikipedia</a></li>
-    <li class="Crossref"><a data-toggle="tab" href="#Crossref"><div class="img"></div> Crossref</a><img/></li>
+    <li class="Crossref"><a data-toggle="tab" href="#Crossref"><div class="img"></div> Crossref</a></li>
     <li class="GoogleMaps"><a data-toggle="tab" href="#GoogleMaps"><div class="img"></div> Google Maps</a></li>
     <li class="Twitter"><a data-toggle="tab" href="#Twitter"><div class="img"></div> Twitter</a></li>
     <li class="YouTube">
@@ -78,17 +81,21 @@ HTML;
 
         $html .= <<<HTML
     </li>
+    <li class="D3"><a data-toggle="tab" href="#D3"><div class="img"></div> Grafic</a></li>
 </ul>
-                
+HTML;
+        YouTubeSpecificViewerAsset::register($this->getView());
+
+        $html .= <<<HTML
 <div class="tab-content">
-    <div id="Article" class="tab-pane fade in active">
-        <div id="article">
-            <div class="text">
-                {$this->article_text}
-            </div>
-        </div>
-    </div>
-    <div id="Crossref" class="tab-pane fade">
+<div id="Wikipedia" class="tab-pane fade in active">
+<div id="article">
+<div class="text">
+{$this->article_text}
+</div>
+</div>
+</div>
+<div id="Crossref" class="tab-pane fade">
 HTML;
         $html .= CrossrefWidget::widget([
                     'crossref' => $this->crossref
@@ -96,7 +103,7 @@ HTML;
 
         $html .= <<<HTML
         </div>
-        <div id = "Twitter" class = "tab-pane fade">
+        <div id="Twitter" class="tab-pane fade">
 HTML;
         $html .= TwitterWidget::widget([
                     'twitter' => $this->twitter
@@ -104,8 +111,8 @@ HTML;
 
         $html .= <<<HTML
         </div>
-        <div id = "YouTube" class = "tab-pane fade"></div>
-        <div id = "GoogleMaps" class = "tab-pane fade" >
+        <div id="YouTube" class="tab-pane fade"></div>
+        <div id="GoogleMaps" class="tab-pane fade" >
 HTML;
         $html .= GoogleMapsWidget::widget([
                     'google_maps' => $this->google_maps
@@ -113,6 +120,14 @@ HTML;
 
         $html .= <<<HTML
    </div>
+    <div id="D3" class="tab-pane fade" >
+HTML;
+        $html .= D3Widget::widget([
+                    'd3' => $this->d3
+        ]);
+
+        $html .= <<<HTML
+    </div>
 </div>
 HTML;
 

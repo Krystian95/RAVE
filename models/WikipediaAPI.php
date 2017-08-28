@@ -20,6 +20,10 @@ class WikipediaAPI extends Model {
     public function __construct() {
         
     }
+    
+    public function getBaseUrl() {
+        return $this->baseUrl;
+    }
 
     private function starts_with_upper($str) {
         $chr = mb_substr($str, 0, 1, "UTF-8");

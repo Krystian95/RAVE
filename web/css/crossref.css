@@ -1,4 +1,8 @@
 
+.crossref-color{
+    color: #fec52f;
+}
+
 .crossref-results .result .authors-label,
 .crossref-results .result .date_time-label,
 .crossref-results .result .ISBN-label,
@@ -50,6 +54,19 @@
     float: right;
     background-position: center;
     background-size: 60px;
-    margin-right: -42px;
+    margin-right: -58px;
     margin-top: -50px;
+}
+
+@media (max-width: 768px) {
+
+    .crossref-results {
+        width: 100%;
+    }
+
+    .crossref-results .right_arrow {
+        float: none!important;
+        display: block!important;
+        margin: 10px auto 0px auto!important;
+    }
 }

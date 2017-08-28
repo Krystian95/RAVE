@@ -1,4 +1,8 @@
 
+.youtube-color{
+    color: #ca4638;
+}
+
 .embed-responsive,
 .embed-responsive-16by9,
 .embed-responsive .embed-responsive-item,
@@ -12,4 +16,23 @@
     border-radius: 4px!important;
     padding: 20px!important;
     height: 214px!important;
+}
+
+@media (max-width: 768px) {
+    
+    .embed-responsive,
+    .embed-responsive-16by9,
+    .embed-responsive .embed-responsive-item,
+    .embed-responsive iframe,
+    .embed-responsive embed,
+    .embed-responsive object,
+    .embed-responsive video {
+        float: none!important;
+        padding: 0px!important;
+        display: block!important;
+        margin-bottom: 25px!important;
+        width: 290px!important;
+        position: relative!important;
+        height: 177.8px!important;
+    }
 }

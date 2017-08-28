@@ -10,7 +10,8 @@
 #article .gallery,
 #article .mw-mf-image-replacement,
 #article li.mw-empty-elt,
-#article .noresize
+#article .noresize,
+#article .mw-cite-backlink
 {
     display: none!important;
 }
@@ -19,6 +20,11 @@
 #article table.vertical-navbox
 {
     background-color: yellow!important;
+}
+
+.no-posts{
+    text-align: center;
+    margin: 80px 0px 60px 0px;
 }
 
 .main-title{
@@ -31,6 +37,19 @@
 
 #article .light-gray{
     color: #ccc!important;
+}
+
+#article .quotebox {
+    border: 1px solid orange!important;
+    border-radius: 3px;
+}
+
+#article blockquote{
+    border-left-color: orange!important;
+}
+
+#article .quotebox cite {
+    margin-top: 10px;
 }
 
 span.glyphicon.glyphicon-share.light-gray {
@@ -58,11 +77,14 @@ span.glyphicon.glyphicon-share.light-gray {
     padding: 7px;
 }
 
+#article pre{
+    border-color: orange!important;
+}
+
 #article table {
     border-collapse: collapse!important;
     width: 100%!important;
-    margin-top: 10px!important;
-    margin-bottom: 10px!important;
+    margin: 20px auto!important;
 }
 
 #article table th a:hover{

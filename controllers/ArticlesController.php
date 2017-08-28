@@ -44,7 +44,8 @@ class ArticlesController extends \yii\web\Controller {
                         'article_new_link' => $article['newLink'],
                         'crossref' => $article['crossref'],
                         'google_maps' => $article['google_maps'],
-                        'twitter' => $article['twitter']
+                        'twitter' => $article['twitter'],
+                        'd3' => $article['d3']
             ]);
         } else if (isset($article['error'])) {
 

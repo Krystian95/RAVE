@@ -6,6 +6,7 @@ use app\models\WikipediaAPI;
 use app\models\GoogleMapsAPI;
 use app\models\CrossrefAPI;
 use app\models\TwitterAPI;
+use app\models\D3API;
 use yii\base\Model;
 use app\models\MainCategory;
 
@@ -47,10 +48,15 @@ class Article extends Model {
             $twitter_api = new TwitterAPI($this->title);
             $twitter_result = $twitter_api->getResults();
             $article['twitter'] = $twitter_result;
+
+            $d3_api = new D3API($this->title);
+            $d3_result = $d3_api->getResults();
+            $article['d3'] = $d3_result;
         } else {
             $article['crossref'] = null;
             $article['google_maps'] = null;
             $article['twitter'] = null;
+            $article['d3'] = null;
         }
 
         return $article;

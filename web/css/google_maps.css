@@ -1,4 +1,8 @@
 
+.crossref-color{
+    color: #ce6f2d;
+}
+
 #map-canvas {
     width: 100%;
     height: 500px;

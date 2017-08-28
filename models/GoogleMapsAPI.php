@@ -19,12 +19,15 @@ class GoogleMapsAPI extends Model {
     }
 
     public function getResults() {
+        
+        $api = new API($this->baseUrl);
+        $normalizeChars = $api->getNormalizeChar();
+        $mainQuery = strtr($this->query, $normalizeChars);
 
-        $queryForUrl = urlencode($this->query);
+        $queryForUrl = urlencode($mainQuery);
 
         $api_call = '?address=' . $queryForUrl . '&key=' . $this->key;
 
-        $api = new API($this->baseUrl);
         $api_result = $api->getAPIResult($api_call);
 
         $response = $this->buildResultsResponse($api_result);

@@ -9,16 +9,14 @@ namespace app\assets;
 
 use yii\web\AssetBundle;
 
-class GenericViewerAsset extends AssetBundle {
+class YouTubeSpecificViewerAsset extends AssetBundle {
 
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/articleViewer.css'
     ];
     public $js = [
-        'js/UrlTool.js',
-        'js/articleViewer.js'
+        'js/specificViewerYouTube.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

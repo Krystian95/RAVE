@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use yii\base\Model;
+use app\models\API;
 
 /**
  * ContactForm is the model behind the contact form.
@@ -20,7 +21,7 @@ class TwitterAPI extends Model {
     private $requestMethod = 'GET';
     private $query;
 
-    public function __construct($query) {
+    public function __construct($query = null) {
         $this->query = $query;
     }
 
@@ -28,7 +29,10 @@ class TwitterAPI extends Model {
 
         require_once Yii::getAlias('@TwitterAPIExchange');
 
-        $queryForUrl = urlencode($this->query);
+        $api = new API();
+        $normalizeChars = $api->getNormalizeChar();
+        $mainQuery = strtr($this->query, $normalizeChars);
+        $queryForUrl = urlencode($mainQuery);
         $limit = 10;
 
         /* Richiede i 10 tweet più recenti cercando la parola "news" */
@@ -66,7 +70,7 @@ class TwitterAPI extends Model {
                 }
 
                 if (isset($tweet['created_at'])) {
-                    $tweet_obj['date_time'] = $tweet['created_at'];
+                    $tweet_obj['date_time'] = str_replace(' +0000', ',', $tweet['created_at']);
                 }
 
                 if (isset($tweet['user']['name'])) {

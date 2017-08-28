@@ -47,6 +47,13 @@ UrlTool.prototype.replaceUrlLinks = function (container) {
                 $(this).attr('href', finalUrl);
             }
         }
+
+        var title = $(this).prop('title');
+
+        if (~title.indexOf("Special:")) {
+            $(this).contents().unwrap();
+        }
+
     });
 
 };

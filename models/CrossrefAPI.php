@@ -12,19 +12,26 @@ class CrossrefAPI extends Model {
     private $baseUrl = 'https://api.crossref.org/works';
     private $query;
 
-    public function __construct($query) {
+    public function __construct($query = null) {
         $this->query = $query;
+    }
+    
+    public function getBaseUrl() {
+        return $this->baseUrl;
     }
 
     public function getResults() {
 
-        $queryForUrl = urlencode($this->query);
+        $api = new API($this->baseUrl);
+        $normalizeChars = $api->getNormalizeChar();
+        $mainQuery = strtr($this->query, $normalizeChars);
+
+        $queryForUrl = urlencode($mainQuery);
 
         $limit = 10;
 
         $api_call = '?query=' . $queryForUrl . '&sort=published&order=asc&rows=' . $limit;
 
-        $api = new API($this->baseUrl);
         $api_result = $api->getAPIResult($api_call);
 
         $response = $this->buildResultsResponse($api_result);
@@ -54,6 +61,10 @@ class CrossrefAPI extends Model {
 
                 if (isset($items[$i]['link'][0]['URL'])) {
                     $response_element['link'] = $items[$i]['link'][0]['URL'];
+
+                    if ($this->linkReturn404Error($response_element['link'])) {
+                        $response_element['link_corrupted'] = true;
+                    }
                 }
 
                 if (isset($items[$i]['indexed']['date-time'])) {
@@ -104,6 +115,15 @@ class CrossrefAPI extends Model {
 
     private function sanitize($string) {
         return preg_replace("/[^ \w]+/", " ", $string);
+    }
+
+    private function linkReturn404Error($url) {
+        $file_headers = @get_headers($url);
+        if (!$file_headers || $file_headers[0] == 'HTTP/1.1 404 Not Found') {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }

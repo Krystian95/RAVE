@@ -1,6 +1,7 @@
 
 .nav.nav-tabs {
     margin-bottom: 25px;
+    height: 44px;
 }
 
 .tab-pane{
@@ -9,6 +10,20 @@
 
 .nav-tabs > li {
     margin-bottom: -21px;
+    width: 16.6%;
+    text-align: center;
+}
+
+.corrupted-link{
+    background-image: url(images/exclamation-point.png);
+    width: 20px;
+    height: 25px;
+    background-position: center;
+    background-size: 15px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    margin-top: -3px;
+    vertical-align: middle;
 }
 
 .nav-tabs li a div.img{
@@ -18,7 +33,7 @@
     background-size: 25px;
     display: inline-block;
     margin-right: 3px;
-    margin-top: -1px;
+    margin-top: -4px;
     vertical-align: middle;
 }
 
@@ -40,4 +55,29 @@
 
 .nav-tabs li.Twitter a div.img{
     background-image: url(images/nav-tabs/twitter.png);
+}
+
+.nav-tabs li.D3 a div.img{
+    background-image: url(images/nav-tabs/grafici.png);
+}
+
+@media (max-width: 768px) {
+
+    .nav.nav-tabs {
+        margin-bottom: 230px;
+    }
+
+    .main-title {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .nav-tabs > li > a{
+        border: 1px solid #eeeeee!important;
+    }
+
+    .nav-tabs > li {
+        width: 100%!important;
+        margin-bottom: 0px!important;
+    }
 }

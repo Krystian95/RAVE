@@ -13,7 +13,7 @@ class YouTubeAPI extends Model {
     private $key = 'AIzaSyAy9WVj2-ghraoUb-lmkp7HcP6QLBwhEiY';
     private $query;
 
-    public function __construct($query) {
+    public function __construct($query = null) {
         $this->query = $query;
     }
 
@@ -50,6 +50,14 @@ class YouTubeAPI extends Model {
         } else {
             return null;
         }
+    }
+
+    public function getBaseUrl() {
+        return $this->baseUrl;
+    }
+    
+    public function getKey() {
+        return $this->key;
     }
 
 }

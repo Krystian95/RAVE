@@ -28,7 +28,8 @@ if (isset($article_text) || isset($article_error)) {
                 'username_logged_in' => $username_logged_in,
                 'crossref' => $crossref,
                 'google_maps' => $google_maps,
-                'twitter' => $twitter
+                'twitter' => $twitter,
+                'd3' => $d3
             ]);
 
             Pjax::end();

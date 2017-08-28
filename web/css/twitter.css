@@ -1,4 +1,8 @@
 
+.twitter-color{
+    color: #4086cd;
+}
+
 .twitter-results .result .user{
     font-weight: bold;
 }
@@ -47,6 +51,19 @@
     float: right;
     background-position: center;
     background-size: 60px;
-    margin-right: -42px;
-    margin-top: -50px;
+    margin-right: -58px;
+    margin-top: -41px;
+}
+
+@media (max-width: 768px) {
+
+    .twitter-results {
+        width: 100%!important;
+    }
+
+    .twitter-results .right_arrow {
+        float: none!important;
+        display: block!important;
+        margin: 10px auto 0px auto!important;
+    }
 }
