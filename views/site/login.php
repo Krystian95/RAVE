@@ -9,7 +9,7 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'RAVE - Login';
 ?>
 <div class="site-login">
-    <h1>Login</h1>
+    <h3 class="titlepage">Login</h3>
 
     <p><br>Do you want to Annotate the pages? Login!</p>
     <p>Please fill out the following fields to login:</p>

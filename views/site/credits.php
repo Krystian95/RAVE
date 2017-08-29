@@ -8,11 +8,11 @@ use yii\helpers\Html;
 
 $this->registerCssFile("@web/css/credits.css");
 
-$this->title = 'RAVE - Credits';
+$this->title = 'Credits';
 ?>
 <div class="site-credits">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h3 class="titlepage"><?= Html::encode($this->title) ?></h3>
     <br>
     <ul>
         <li><a href="http://www.yiiframework.com" target="_blank">Yii2 Framework</a></li>

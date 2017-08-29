@@ -9,7 +9,7 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'RAVE - Register';
 ?>
 <div class="site-signup">
-    <h1>Register</h1>
+    <h3 class="titlepage">Register</h3>
 
     <p><br>Do you want to Annotate the pages? Register to our site!</p>
     <p>Please fill out the following fields to register:</p>

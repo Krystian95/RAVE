@@ -7,6 +7,6 @@ use app\components\ChartsWidget;
 /* @var $message string */
 /* @var $exception Exception */
 
-$this->title = 'RAVE - Charts';
+$this->title = 'Charts';
 
 echo ChartsWidget::widget();

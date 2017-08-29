@@ -6,8 +6,8 @@ $(document).on('ready', function () {
     /* Population */
 
     var margin = {top: 20, right: 80, bottom: 230, left: 80},
-            width = 3450 - margin.left - margin.right,
-            height = 800 - margin.top - margin.bottom;
+            width = 5000 - margin.left - margin.right,
+            height = 900 - margin.top - margin.bottom;
     var x0 = d3.scale.ordinal()
             .rangeRoundBands([0, width], .1);
     var x1 = d3.scale.ordinal();
@@ -308,7 +308,7 @@ $(document).on('ready', function () {
             .enter().append("g")
             .attr("class", "legend")
             .attr("transform", function (d, i) {
-                return "translate(" + "-3100," + i * 20 + ")";
+                return "translate(" + "-4600," + i * 20 + ")";
             });
     legend.append("rect")
             .attr("x", width - 18)
@@ -331,7 +331,7 @@ $(document).on('ready', function () {
             y: [50, 54, 56, 57, 58, 59, 75, 79, 81, 82, 99, 103, 108, 110, 113, 116, 120, 123, 124, 129, 131, 134, 140, 143, 145, 147, 148, 150, 153, 154, 155, 157, 164, 177, 183, 184, 187, 189, 191, 192, 193, 193]},
     ];
     var xy_chart = d3_xy_chart()
-            .width(1300)
+            .width(1015)
             .height(700)
             .xlabel("Years")
             .ylabel("Number of nations");
@@ -350,7 +350,7 @@ function d3_xy_chart() {
             //
             // Create the plot. 
             //
-            var margin = {top: 20, right: 80, bottom: 30, left: 80},
+            var margin = {top: 20, right: 0, bottom: 30, left: 80},
                     innerwidth = width - margin.left - margin.right,
                     innerheight = height - margin.top - margin.bottom;
             var x_scale = d3.scale.linear()

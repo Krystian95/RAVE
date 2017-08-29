@@ -11,6 +11,9 @@
     border-radius: 4px;
     margin-bottom: 20px;
     background-color: white;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: lightgrey;
 }
 
 .bolded{
@@ -20,6 +23,26 @@
 body{
     cursor: default;
     background-color: #f1f1f1;
+}
+
+.footer {
+    height: 60px;
+    background-color: #ffffff;
+    border-top: 1px solid lightgrey;
+    padding-top: 20px;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #d3d3d3;
+}
+
+.titlepage {
+    text-align: center;
+    margin: 40px 0px 20px 0px;
+    color: #4e4e4e;
 }
 
 /* MENU */
@@ -109,12 +132,25 @@ nav#w0 {
     margin: auto;
 }
 
-.onu{
+.onu {
     width: 45px;
     height: auto;
     max-width: 100%;
+    margin-right: 5px;
+    margin-top: -5px;
 }
 
+span.label.label-default.updated {
+    font-size: 40%;
+    vertical-align: middle;
+    padding: .3em;
+    background-color: orange;
+    position: absolute;
+    margin-left: 10px;
+    line-height: 12px;
+    display: inline-block;
+    margin-top: 3px;
+}
 
 /* SEARCH BAR */
 
@@ -230,4 +266,72 @@ nav#w0 {
     .navbar-inverse .navbar-nav > li > a:focus{
         border-radius: 0px;
     }
+}
+
+/* CARD */
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #f1f1f1;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem
+}
+
+.card-block {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem
+}
+
+.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px
+}
+
+.col-sm-6 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px
+}
+
+.col-sm-6 {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 50%;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%
+    }
+
+.card-title {
+    margin-bottom: 0.75rem;
+    margin-top: 0px;
+    color: #337ab7;
+}
+
+.card-text:last-child {
+    margin-bottom: 0
+}
+
+.card:hover{
+    background-color: white;
 }

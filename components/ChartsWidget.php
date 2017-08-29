@@ -17,11 +17,11 @@ class ChartsWidget extends Widget {
 
         $html = '<div id="D3">';
 
-        $html .= '<h3 class="title">Number of member states of the United Nations over time</h3>';
+        $html .= '<h3 class="titlepage">Number of member states of the United Nations over time</h3>';
 
         $html .= '<div id="d3-grafic-members"></div>';
 
-        $html .= '<h3 class="title">Population growth of United Nations member states in the 1960s and 2016s</h3>';
+        $html .= '<h3 class="titlepage">Population growth of United Nations member states in the 1960s and 2016s</h3>';
 
         $html .= '<div id="d3-grafic-population"></div>';
 
