@@ -22,6 +22,7 @@ $this->title = 'Credits';
         <li><a href="https://www.mediawiki.org/wiki/API:Main_page" target="_blank">Wikipedia API</a></li>
         <li><a href="https://developers.google.com/youtube/" target="_blank">YouTube API</a></li>
         <li><a href="https://github.com/J7mbo/twitter-api-php" target="_blank">Twitter API (framework)</a></li>
+        <li><a href="https://github.com/Zivi/FlattestRoute" target="_blank">Flattest Route (Google Maps)</a></li>
         <li><a href="https://www.crossref.org/services/metadata-delivery/rest-api/" target="_blank">Crossref API</a></li>
         <li><a href="https://d3js.org/" target="_blank">D3.js</a></li>
         <li><a href="https://github.com" target="_blank">GitHub (Student)</a></li>

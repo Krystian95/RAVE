@@ -26,8 +26,7 @@ $config = [
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => []
+            'showScriptName' => false
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',

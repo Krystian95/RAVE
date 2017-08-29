@@ -3,7 +3,7 @@
 namespace app\components;
 
 use yii\base\Widget;
-use app\assets\PostListAsset;
+use app\assets\HomeAsset;
 
 class PostListWidget extends Widget {
 
@@ -13,7 +13,7 @@ class PostListWidget extends Widget {
     public function init() {
         parent::init();
 
-        PostListAsset::register($this->getView());
+        HomeAsset::register($this->getView());
     }
 
     public function run() {

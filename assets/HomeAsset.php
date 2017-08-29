@@ -9,15 +9,15 @@ namespace app\assets;
 
 use yii\web\AssetBundle;
 
-class PostListAsset extends AssetBundle {
+class HomeAsset extends AssetBundle {
 
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/postList.css'
+        'css/home.css'
     ];
     public $js = [
-        'js/postListLoader.js'
+        'js/homeLoader.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

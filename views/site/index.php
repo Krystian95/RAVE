@@ -8,7 +8,6 @@ use app\components\PostListWidget;
 <div class="site-index">
     
     <div class="intro">
-        
         <br>
         <br>
         <img class="logo" src="css/images/logo_big_description.png" alt="RAVE Resources Annotator, Visualizer and Enhancer">
