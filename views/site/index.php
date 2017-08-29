@@ -19,7 +19,7 @@ use app\components\PostListWidget;
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-block">
-                        <h3 class="card-title">What is RAVE?</h3>
+                        <h3 class="card-title">What is RAVE</h3>
                         <p class="card-text">RAVE is a web application that allow users to search for information about any topic on 
                             <a href="https://en.wikipedia.org/" target="_blank">Wikipedia</a>. If the topic you are looking 
                             for belongs to the category "Member states of the United Nations" then the results from 

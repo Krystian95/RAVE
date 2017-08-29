@@ -16,12 +16,7 @@ $this->title = 'RAVE - Login';
 
     <?php
     $form = ActiveForm::begin([
-                'id' => 'login-form',
-                'options' => ['class' => 'form-horizontal'],
-                'fieldConfig' => [
-                    'template' => "{label}\n<div class=\"col-lg-3\">{input}</div>\n<div class=\"col-lg-8\">{error}</div>",
-                    'labelOptions' => ['class' => 'col-lg-1 control-label'],
-                ],
+                'id' => 'login-form'
     ]);
     ?>
 
@@ -35,11 +30,7 @@ $this->title = 'RAVE - Login';
     ])->checkbox()
     ?>
 
-    <div class="form-group">
-        <div class="col-lg-offset-1 col-lg-11">
-            <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-        </div>
-    </div>
+    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
 
     <?php ActiveForm::end(); ?>
 </div>

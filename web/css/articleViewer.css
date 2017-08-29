@@ -1,14 +1,9 @@
 
-.wrap > .container {
-    margin-top: -10px!important;
-}
-
 #article span.mw-editsection,
 #article .metadata,
 #article table:not(.wikitable),
 #article .infobox,
 #article .barbox,
-/*#article .thumbinner,*/
 #article .navigation-not-searchable,
 #article .portal,
 #article .gallery,
@@ -159,6 +154,11 @@ span.glyphicon.glyphicon-share.light-gray {
 }
 
 @media (max-width: 769px) {
+
+    .wrap > .container {
+        margin-top: 0px!important;
+    }
+    
     .tab-pane {
         width: 100%!important;
         padding: 0!important;

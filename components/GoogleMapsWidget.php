@@ -48,7 +48,7 @@ class GoogleMapsWidget extends Widget {
                         <button class="btn btn-primary" type="submit" id="go">Calculate Travel</button>
                         <div id="path-result">
                             <div class="row travel-info">
-                                <b>Distance</b>:
+                                <b>Distance</b>: 
                                 <span id="distance"></span>
                             </div>
                             <div class="row travel-info">
