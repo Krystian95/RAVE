@@ -86,6 +86,11 @@ class SiteController extends Controller {
 
         return $this->render('credits');
     }
+    
+    public function actionCharts() {
+
+        return $this->render('charts');
+    }
 
     public function actionSignup() {
 

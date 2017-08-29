@@ -66,7 +66,6 @@ HTML;
 <ul class="nav nav-tabs">
     <li class="active Wikipedia"><a data-toggle="tab" href="#Wikipedia"><div class="img"></div> Wikipedia</a></li>
     <li class="Crossref"><a data-toggle="tab" href="#Crossref"><div class="img"></div> Crossref</a></li>
-    <li class="GoogleMaps"><a data-toggle="tab" href="#GoogleMaps"><div class="img"></div> Google Maps</a></li>
     <li class="Twitter"><a data-toggle="tab" href="#Twitter"><div class="img"></div> Twitter</a></li>
     <li class="YouTube">
 HTML;
@@ -81,7 +80,8 @@ HTML;
 
         $html .= <<<HTML
     </li>
-    <li class="D3"><a data-toggle="tab" href="#D3"><div class="img"></div> Grafic</a></li>
+    <li class="GoogleMaps"><a data-toggle="tab" href="#GoogleMaps"><div class="img"></div> Google Maps</a></li>
+    <li class="D3"><a data-toggle="tab" href="#D3"><div class="img"></div> Chart</a></li>
 </ul>
 HTML;
         YouTubeSpecificViewerAsset::register($this->getView());

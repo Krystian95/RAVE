@@ -38,7 +38,9 @@ AppAsset::register($this);
                 ],
             ]);
             $menuItems = [
-                ['label' => 'Home', 'url' => ['/site']]
+                ['label' => 'Home', 'url' => ['/site']],
+                ['label' => 'Charts', 'url' => ['/site/charts']],
+                ['label' => 'Credits', 'url' => ['/site/credits']]
             ];
             ?>
 
@@ -50,8 +52,6 @@ AppAsset::register($this);
             </div>
 
             <?php
-            $menuItems[] = ['label' => 'Credits', 'url' => ['/site/credits']];
-
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
@@ -70,11 +70,11 @@ AppAsset::register($this);
             ?>
 
             <div class="container"> 
-<?=
-Breadcrumbs::widget([
-    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-])
-?>
+                <?=
+                Breadcrumbs::widget([
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                ])
+                ?>
                 <?= $content ?>
             </div>
         </div>
@@ -90,7 +90,7 @@ Breadcrumbs::widget([
             </div>
         </footer>
 
-<?php $this->endBody() ?>
+        <?php $this->endBody() ?>
     </body>
 </html>
 <?php $this->endPage() ?>

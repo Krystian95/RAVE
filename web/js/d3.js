@@ -43,12 +43,6 @@ $(document).on('ready', function () {
 
     var data = createData();
 
-    var data = [
-        {letter: "Wikipedia", frequency: 4764},
-        {letter: "Crossref", frequency: 214156},
-        {letter: "YouTube", frequency: 1000000}
-    ];
-
     // The following code was contained in the callback function.
     x.domain(data.map(function (d) {
         return d.letter;

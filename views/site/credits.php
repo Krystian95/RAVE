@@ -19,7 +19,11 @@ $this->title = 'RAVE - Credits';
         <li><a href="https://v4-alpha.getbootstrap.com" target="_blank">Twitter Bootstrap</a></li>
         <li><a href="https://jquery.com" target="_blank">jQuery</a></li>
         <li><a href="https://github.com/moniever/Yii2-Basic-Tempate-Register-Login" target="_blank">Yii2 User registration</a></li>
-        <li><a href="https://github.com/J7mbo/twitter-api-php" target="_blank">Twitter API</a></li>
+        <li><a href="https://www.mediawiki.org/wiki/API:Main_page" target="_blank">Wikipedia API</a></li>
+        <li><a href="https://developers.google.com/youtube/" target="_blank">YouTube API</a></li>
+        <li><a href="https://github.com/J7mbo/twitter-api-php" target="_blank">Twitter API (framework)</a></li>
+        <li><a href="https://www.crossref.org/services/metadata-delivery/rest-api/" target="_blank">Crossref API</a></li>
+        <li><a href="https://d3js.org/" target="_blank">D3.js</a></li>
         <li><a href="https://github.com" target="_blank">GitHub (Student)</a></li>
         <li><a href="https://stackoverflow.com/questions/35663229/how-to-get-a-short-snippet-of-text-and-the-main-image-of-wikipedia-articles-by-a" target="_blank">Wikipedia Live Search</a></li>
         <li><a href="http://esimakin.github.io/twbs-pagination" target="_blank">Table Pagination</a></li>
