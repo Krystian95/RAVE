@@ -97,7 +97,7 @@ function createData() {
 
     var dataPrepared = [];
 
-    if (typeof (wikipedia_selector) != 'undefined' && wikipedia_selector != null) {
+    if ($(wikipedia_selector).length) {
         if ($(wikipedia_selector).val() !== '') {
             var results = $(wikipedia_selector).val();
             var element = [
@@ -110,7 +110,7 @@ function createData() {
         }
     }
 
-    if (typeof (crossref_selector) != 'undefined' && crossref_selector != null) {
+    if ($(crossref_selector).length) {
         if ($(crossref_selector).val() !== '') {
             var results = $(crossref_selector).val();
             var element = [
@@ -123,7 +123,7 @@ function createData() {
         }
     }
 
-    if (typeof (youtube_selector) != 'undefined' && youtube_selector != null) {
+    if ($(youtube_selector).length) {
         if ($(youtube_selector).val() !== '') {
             var results = $(youtube_selector).val();
             var element = [
@@ -141,5 +141,12 @@ function createData() {
 }
 
 function getFormattedCurrency(num) {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    
+    var numOuput = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    
+    if (num >= 1000000) {
+        numOuput += '+';
+    }
+    
+    return numOuput;
 }

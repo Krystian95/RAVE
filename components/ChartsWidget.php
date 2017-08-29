@@ -3,14 +3,14 @@
 namespace app\components;
 
 use yii\base\Widget;
-use app\assets\D3Asset;
+use app\assets\ChartsAsset;
 
 class ChartsWidget extends Widget {
 
     public function init() {
         parent::init();
 
-        D3Asset::register($this->getView());
+        ChartsAsset::register($this->getView());
     }
 
     public function run() {

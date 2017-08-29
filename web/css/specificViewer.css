@@ -80,4 +80,8 @@
         width: 100%!important;
         margin-bottom: 0px!important;
     }
+
+    #alert-intro {
+        width: 100%!important;
+    }
 }
