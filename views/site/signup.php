@@ -6,13 +6,13 @@ use yii\bootstrap\ActiveForm;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \frontend\models\SignupForm */
 
-$this->title = 'RAVE - Signup';
+$this->title = 'RAVE - Register';
 ?>
 <div class="site-signup">
-    <h1>Signup</h1>
+    <h1>Register</h1>
 
-    <p><br>Do you want to Annotate the pages? Signup to our site!</p>
-    <p>Please fill out the following fields to signup:</p>
+    <p><br>Do you want to Annotate the pages? Register to our site!</p>
+    <p>Please fill out the following fields to register:</p>
 
     <div class="row">
         <div class="col-lg-5">
@@ -21,7 +21,7 @@ $this->title = 'RAVE - Signup';
                 <?= $form->field($model, 'email') ?>
                 <?= $form->field($model, 'password')->passwordInput() ?>
                 <div class="form-group">
-                    <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                    <?= Html::submitButton('Register', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
                 </div>
             <?php ActiveForm::end(); ?>
         </div>

@@ -10,14 +10,19 @@ $(document).on('ready pjax:success', function () {
         $("#YouTube").html("");
     });
 
-    $(".nav-tabs li").click(function () {
-        var id = $(this).attr('class');
-        id = id.replace("active ", "");
-        id = id.replace(" active", "");
-        setTimeout(function () {
-            $('html, body').animate({
-                scrollTop: ($('#' + id).offset().top - 10)
-            }, 500);
-        }, 500);
-    });
+    window.onresize = function (event) {
+        if (screen.width < 769) {
+            $(".nav-tabs li").click(function () {
+                var id = $(this).attr('class');
+                id = id.replace("active ", "");
+                id = id.replace(" active", "");
+                setTimeout(function () {
+                    $('html, body').animate({
+                        scrollTop: ($('#' + id).offset().top - 10)
+                    }, 500);
+                }, 500);
+            });
+        }
+    };
+
 });
