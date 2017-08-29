@@ -1,10 +1,14 @@
 
+.wrap > .container {
+    margin-top: -10px!important;
+}
+
 #article span.mw-editsection,
 #article .metadata,
 #article table:not(.wikitable),
 #article .infobox,
 #article .barbox,
-#article .thumbinner,
+/*#article .thumbinner,*/
 #article .navigation-not-searchable,
 #article .portal,
 #article .gallery,
@@ -14,6 +18,23 @@
 #article .mw-cite-backlink
 {
     display: none!important;
+}
+
+#article .thumbinner {
+    margin: 10px 0px;
+}
+
+#article .thumbimage {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+#article .thumbcaption {
+    font-style: italic;
+    background-color: #f1f1f1;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 8px;
 }
 
 #article div#toc,

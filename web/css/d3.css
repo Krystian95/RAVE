@@ -1,8 +1,4 @@
 
-#D3{
-    overflow: auto!important;
-}
-
 #D3 .title{
     text-align: center;
     margin: 40px 0px;
@@ -16,6 +12,7 @@
 #D3 #d3-grafic {
     margin: 0 auto;
     width: 960px;
+    overflow: auto!important;
 }
 
 /* GRAFIC */
@@ -67,8 +64,13 @@
 }
 
 @media (max-width: 768px) {
+
     #D3 .title{
-        margin: 20px 0px;
+        margin: 0px;
+    }
+
+    #D3 #d3-grafic {
+        width: 100%;
     }
 
 }

@@ -2,6 +2,8 @@
 #D3 #d3-grafic-members,
 #D3 #d3-grafic-population{
     overflow: auto!important;
+    margin: 0 auto;
+    width: 960px;
 }
 
 #D3 .title{
@@ -16,12 +18,6 @@
 
 #D3 svg:not(:root) {
     overflow: visible!important;
-}
-
-#D3 #d3-grafic-members,
-#D3 #d3-grafic-population {
-    margin: 0 auto;
-    width: 960px;
 }
 
 #D3 #d3-grafic-members svg{
@@ -132,8 +128,18 @@ text {
 
 
 @media (max-width: 768px) {
+
     #D3 .title{
         margin: 20px 0px;
+    }
+
+    #D3 .title:nth-child(3){
+        margin: 40px 0px;
+    }
+
+    #D3 #d3-grafic-members,
+    #D3 #d3-grafic-population{
+        width: 100%;
     }
 
 }

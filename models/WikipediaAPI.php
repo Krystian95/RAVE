@@ -197,7 +197,7 @@ class WikipediaAPI extends Model {
         /*
          * https://en.wikipedia.org/wiki/Special:ApiSandbox#action=parse&format=json&page=Silvio+Berlusconi&prop=text%7Crevid&mobileformat=1&noimages=1
          */
-        $api_call = '?action=parse&format=json&page=' . $pageTitleForUrl . '&prop=text%7Crevid&mobileformat=1&noimages=1';
+        $api_call = '?action=parse&format=json&page=' . $pageTitleForUrl . '&prop=text%7Crevid&mobileformat=1';
 
         $api = new API($this->baseUrl);
         $api_result = $api->getAPIResult($api_call);

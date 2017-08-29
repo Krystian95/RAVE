@@ -323,6 +323,7 @@ $(document).on('ready', function () {
             .text(function (d) {
                 return d;
             });
+            
     /* States */
 
     var data = [{label: "",

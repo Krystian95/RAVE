@@ -50,7 +50,7 @@ UrlTool.prototype.replaceUrlLinks = function (container) {
 
         var title = $(this).prop('title');
 
-        if (~title.indexOf("Special:")) {
+        if (~title.indexOf("Special:") || ~$(this).hasClass("image")) {
             $(this).contents().unwrap();
         }
 

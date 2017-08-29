@@ -14,6 +14,10 @@
     text-align: center;
 }
 
+.tab-content {
+    padding: 10px 0px;
+}
+
 .corrupted-link{
     background-image: url(images/exclamation-point.png);
     width: 20px;
@@ -64,7 +68,8 @@
 @media (max-width: 768px) {
 
     .nav.nav-tabs {
-        margin-bottom: 230px;
+        height: auto;
+        border: 0;
     }
 
     .main-title {
