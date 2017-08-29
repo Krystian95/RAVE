@@ -1,7 +1,11 @@
-
+.wrap > .container {
+    background-image: url("images/background.png");
+    background-repeat: repeat-x;
+}
 .post-list-title{
     margin: 20px auto 30px auto;
     text-align: center;
+    color: #ffa500;
 }
 
 .post-container{
@@ -13,6 +17,10 @@
 .post-container a{
     text-decoration: none;
     transition: 0s!important;
+}
+
+p {
+    text-align: justify;
 }
 
 .post{

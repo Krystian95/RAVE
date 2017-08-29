@@ -81,11 +81,10 @@ AppAsset::register($this);
 
         <footer class="footer">
             <div class="container">
-                <p class="pull-left">&copy; RAVE <?= date('Y') ?></p>
-                <p class="pull-right">Powered by
-                    <a href="mailto:cristian.romanello@studio.unibo.it" target="_blank">Cristian Romanello</a> e 
-                    <a href="mailto:lorenzo.lanzarone@studio.unibo.it" target="_blank">Lorenzo Lanzarone</a>, 
-                    <a href="<?php echo Yii::$app->getHomeUrl(); ?>site/credits"><i>Credits</i></a>
+                <p class="pull-left">Copyright &copy; <?= date('Y') ?> RAVE. All rights reserved.</p>
+                <p class="pull-right">Created by
+                    <a href="mailto:cristian.romanello@studio.unibo.it" target="_blank">Cristian Romanello</a> and 
+                    <a href="mailto:lorenzo.lanzarone@studio.unibo.it" target="_blank">Lorenzo Lanzarone</a>
                 </p>
             </div>
         </footer>

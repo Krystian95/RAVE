@@ -9,19 +9,24 @@ use app\components\PostListWidget;
     
     <div class="intro">
         
-        <h1>Welcome to RAVE</h1>
-        <h2>Resources Annotator, Visualizer and Enhancer</h2>
         <br>
-        <img class="aaa">
-        <br><br><br><br><br>
-        <p>OBE is an integrated environment that allows the user to search topic and information about anything on Wikipedia. 
-            Furthermore all the topics the users can find in the platform are mashed up together with related contents from 
-            Youtube platform, Twitter, Google Maps, Spotify and if the content is about "English Rock Singer" category, we also 
-            retrive you some articles from the Crossref database. We also give our community the feature of making annotations 
-            over all the content searched, so you can remember in every moment your thoughts and your opinions and eventually 
-            share them with other users, so remember to sign-up to have full access to every feature.
+        <img class="logo" src="css/images/logo_big_description.png" alt="RAVE Resources Annotator, Visualizer and Enhancer">
+        <br>
+        <hr>
+        <p>
+           What is RAVE? RAVE is a web application that allow users to search for information about any topic on 
+           <a href="https://en.wikipedia.org/" target="_blank">Wikipedia</a>. If the topic you are looking 
+           for belongs to the category "Member states of the United Nations" then the results from 
+           <a href="https://www.crossref.org" target="_blank">Crossref</a>, 
+           <a href="https://twitter.com/" target="_blank">Twitter</a>, 
+           <a href="https://www.youtube.com/" target="_blank">YouTube</a>, 
+           <a href="https://www.google.com/maps" target="_blank">Google Maps</a> and 
+           <a href="https://d3js.org" target="_blank">D3.js</a> will also be displayed. 
+           Additionally, RAVE registered users also have the ability to create annotations on pages.
         </p>
         
+        <hr>
+          
     </div>
 
     <?php
