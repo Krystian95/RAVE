@@ -27,34 +27,29 @@
 }
 
 .crossref-results .result {
-    border: 2px solid #fec52f;
+    border: 2px solid #fdc342;
     padding: 13px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
-.crossref-results .result:nth-child(even) {
-    background-color: rgba(243, 242, 242, 0.57);
-}
-
 .crossref-results .result:hover {
-    background-color: rgba(222, 220, 220, 0.70);
+    background-color: rgb(241, 241, 241);
 }
 
 .crossref-results {
-    width: 700px;
+    width: 100%;
     margin: 0px auto;
 }
 
 .crossref-results .right_arrow {
-    background-image: url(images/right_circle_arrow_twitter.png);
+    background-image: url(images/link_crossref.png);
     background-repeat: no-repeat;
     width: 60px;
     height: 60px;
     float: right;
     background-position: center;
     background-size: 60px;
-    margin-right: -58px;
     margin-top: -50px;
 }
 

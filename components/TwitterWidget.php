@@ -34,7 +34,7 @@ class TwitterWidget extends Widget {
 
             foreach ($twitter as $result) {
 
-                $html .= '<div class="result">';
+                $html .= '<div class="result"><div class="resultText">';
 
                 if (isset($result['text'])) {
                     $html .= '<span class="text">' . $result['text'] . '</span>';
@@ -53,11 +53,11 @@ class TwitterWidget extends Widget {
                 }
 
                 if (isset($result['date_time'])) {
-                    $html .= '<br><span class="date_time-label"></span><span class="date_time">' . $result['date_time'] . '</span>';
+                    $html .= '<br><span class="date_time-label"></span><span class="date_time">' . $result['date_time'] . '</span></div>';
                 }
 
                 if (isset($result['link'])) {
-                    $html .= '<a href="' . $result['link'] . '" target="_blank"><img class="right_arrow"/></a>';
+                    $html .= '<a href="' . $result['link'] . '" target="_blank"><div class="right_arrow"></div></a>';
                 }
 
                 $html .= '</div>';

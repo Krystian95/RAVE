@@ -107,7 +107,7 @@ class CrossrefWidget extends Widget {
                 }
 
                 if (isset($result['link'])) {
-                    $html .= '<a href="' . $result['link'] . '" target="_blank"><img class="right_arrow"/></a>';
+                    $html .= '<a href="' . $result['link'] . '" target="_blank"><div class="right_arrow"></div></a>';
                 }
 
                 $html .= '</div>';

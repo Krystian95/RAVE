@@ -30,29 +30,24 @@
     margin-bottom: 20px;
 }
 
-.twitter-results .result:nth-child(even) {
-    background-color: rgba(243, 242, 242, 0.57);
-}
-
 .twitter-results .result:hover {
-    background-color: rgba(222, 220, 220, 0.70);
+    background-color: rgb(241, 241, 241);
 }
 
 .twitter-results {
-    width: 700px;
+    width: 100%;
     margin: 0px auto;
 }
 
 .twitter-results .right_arrow {
-    background-image: url(images/right_circle_arrow_twitter.png);
+    background-image: url(images/link_twitter.png);
     background-repeat: no-repeat;
     width: 60px;
     height: 60px;
     float: right;
     background-position: center;
     background-size: 60px;
-    margin-right: -58px;
-    margin-top: -41px;
+    margin-top: -60px;
 }
 
 @media (max-width: 768px) {
@@ -66,4 +61,8 @@
         display: block!important;
         margin: 10px auto 0px auto!important;
     }
+}
+
+.twitter-results .result .resultText{
+    padding-right: 80px;
 }

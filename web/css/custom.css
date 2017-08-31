@@ -46,6 +46,18 @@ hr {
     color: #4e4e4e;
 }
 
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+    border-bottom-color: transparent;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #d3d3d3;
+}
+
 /* MENU */
 
 #w0 .nav > li {
