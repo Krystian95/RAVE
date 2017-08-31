@@ -5,9 +5,18 @@ namespace app\components;
 use yii\base\Widget;
 use app\assets\SearchResultAsset;
 
+/*
+ * Widget that draws the results of the Wikipedia search.
+ */
 class SearchResultWidget extends Widget {
 
+    /*
+     * The query searched.
+     */
     public $query;
+    /*
+     * The results of the search.
+     */
     public $results;
 
     public function init() {

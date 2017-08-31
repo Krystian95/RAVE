@@ -2,21 +2,26 @@
 
 namespace app\models;
 
-use Yii;
 use app\models\WikipediaAPI;
 use yii\base\Model;
 
 /**
- * ContactForm is the model behind the contact form.
+ * Class that return the serch results.
  */
 class Search extends Model {
 
+    /*
+     * The query searched.
+     */
     private $query;
 
     public function __construct($query) {
         $this->query = $query;
     }
 
+    /*
+     * Retuns the search results.
+     */
     public function getSearchResults() {
 
         $wikipedia_api = new WikipediaAPI();

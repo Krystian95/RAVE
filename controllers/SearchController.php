@@ -5,12 +5,21 @@ namespace app\controllers;
 use app\models\Search;
 use Yii;
 
+/*
+ * Controller class for the Wikipedia post search.
+ */
 class SearchController extends \yii\web\Controller {
 
+    /*
+     * Renders the main page for the search.
+     */
     public function actionIndex() {
         return $this->render('index');
     }
 
+    /*
+     * Renders the page with the results of the search.
+     */
     public function actionSearch() {
 
         $query = Yii::$app->request->get('query');

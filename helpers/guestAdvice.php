@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * The advice shown to the guest users.
+ */
+
 $advice = '<div id="alert-intro" class="alert alert-success alert-dismissible into" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>

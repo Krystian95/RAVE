@@ -43,7 +43,7 @@ $(document).on('ready', function () {
 
     var data = createData();
 
-    // The following code was contained in the callback function.
+    /* The following code was contained in the callback function.*/
     x.domain(data.map(function (d) {
         return d.letter;
     }));

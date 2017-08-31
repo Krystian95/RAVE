@@ -3,10 +3,9 @@
 namespace app\models;
 
 use yii\base\Model;
-use Yii;
 
 /**
- * ContactForm is the model behind the contact form.
+ * Class to create the Google Maps API request.
  */
 class GoogleMapsAPI extends Model {
 
@@ -18,6 +17,9 @@ class GoogleMapsAPI extends Model {
         $this->query = $query;
     }
 
+    /*
+     * Returns the results.
+     */
     public function getResults() {
         
         $api = new API($this->baseUrl);
@@ -36,6 +38,9 @@ class GoogleMapsAPI extends Model {
         return $response;
     }
 
+    /*
+     * Rebuilds results by making them usable.
+     */
     private function buildResultsResponse($api_result) {
 
         if (isset($api_result['results'])) {

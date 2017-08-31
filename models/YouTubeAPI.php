@@ -20,7 +20,7 @@ class YouTubeAPI extends Model {
     public function getResults() {
 
         $queryForUrl = urlencode($this->query);
-        $limit = 12;
+        $limit = 18;
 
         $api_call = '?part=snippet&q=' . $queryForUrl . '&order=relevance&maxResults=' . $limit . '&key=' . $this->key;
 

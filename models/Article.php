@@ -11,16 +11,23 @@ use yii\base\Model;
 use app\models\MainCategory;
 
 /**
- * ContactForm is the model behind the contact form.
+ * Class that create the Wikipedia article and the apis' results.
  */
 class Article extends Model {
 
+    /*
+     * The title of the article.
+     */
     private $title;
 
     public function __construct($title) {
         $this->title = $title;
     }
 
+    /*
+     * Return the article and the apis' results
+     * (if the article is of the main category).
+     */
     public function getArticle($newer = null) {
 
         $main_category = new MainCategory();

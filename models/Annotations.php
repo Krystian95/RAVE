@@ -8,13 +8,17 @@ use yii\base\Model;
 use Yii;
 
 /**
- * ContactForm is the model behind the contact form.
+ * Class that perform the action requested by annotation's controller.
  */
 class Annotations extends Model {
 
     public function __construct() {
         
     }
+
+    /*
+     * Returns all annotations made in a specific page (via article revision id).
+     */
 
     public function getAnnotations($article_revision_id) {
 
@@ -39,6 +43,10 @@ class Annotations extends Model {
         return $annotations;
     }
 
+    /*
+     * Creates a new annotation.
+     */
+
     public function createNewAnnotation($annotation_id, $annotationInput, $user_id, $article_id, $article_revision_id, $global_visibility) {
 
         $annotation = Annotation::findOne([
@@ -54,10 +62,14 @@ class Annotations extends Model {
             $annotation->article_revision_id = $article_revision_id;
 
             if ($global_visibility === null) {
-                // TRUE (public annotation)
+                /*
+                 * TRUE (public annotation)
+                 */
                 $annotation->global_visibility = 1;
             } else {
-                // FALSE (private annotation)
+                /*
+                 * FALSE (private annotation)
+                 */
                 $annotation->global_visibility = 0;
             }
         }
@@ -67,6 +79,10 @@ class Annotations extends Model {
         }
     }
 
+    /*
+     * Update an annotation.
+     */
+
     public function updateAnnotation($annotation_id, $annotationInput, $global_visibility) {
 
         $annotation = Annotation::findOne([
@@ -74,10 +90,14 @@ class Annotations extends Model {
         ]);
 
         if ($global_visibility === null) {
-            /* TRUE (public annotation) */
+            /*
+             * TRUE (public annotation)
+             */
             $annotation->global_visibility = 1;
         } else {
-            /* FALSE (private annotation) */
+            /*
+             * FALSE (private annotation)
+             */
             $annotation->global_visibility = 0;
         }
 
@@ -87,6 +107,10 @@ class Annotations extends Model {
             return $annotation->errors;
         }
     }
+
+    /*
+     * Delete an annotation.
+     */
 
     public function deleteAnnotation($annotation_id) {
 

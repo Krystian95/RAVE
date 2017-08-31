@@ -20,6 +20,8 @@
 
 
 /* ADDED */
+/* global Annotator */
+
 var annotatorViewerObj;
 
 (function () {

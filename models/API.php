@@ -5,7 +5,7 @@ namespace app\models;
 use yii\base\Model;
 
 /**
- * ContactForm is the model behind the contact form.
+ * Generic class to perform an API call.
  */
 class API extends Model {
 
@@ -25,6 +25,9 @@ class API extends Model {
         $this->baseUrl = $baseUrl;
     }
 
+    /*
+     * Retun the results of the api call as an associative array.
+     */
     public function getAPIResult($api_call) {
 
         $opts = array('http' =>
@@ -44,6 +47,9 @@ class API extends Model {
         return $data;
     }
 
+    /*
+     * Normalize the query request.
+     */
     public function getNormalizeChar() {
         return $this->normalizeChars;
     }

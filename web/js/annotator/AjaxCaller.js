@@ -1,7 +1,9 @@
 
+/*
+ * Performs the Ajax calls for annotations.
+ */
 
 /* global annotatorObj, annotatorViewerObj */
-
 function AjaxCaller() {
 
     this.homeUrl = $('#homeUrl').val();
@@ -9,6 +11,9 @@ function AjaxCaller() {
     this.article_id = $('#article_id').val();
 }
 
+/*
+ * Censures the annotation obj from the circular references.
+ */
 AjaxCaller.prototype.censor = function (censor) {
 
     var i = 0;
@@ -17,15 +22,18 @@ AjaxCaller.prototype.censor = function (censor) {
         if (i !== 0 && typeof (censor) === 'object' && typeof (value) == 'object' && censor == value)
             return '[Circular]';
 
-        if (i >= 29) // seems to be a harded maximum of 30 serialized objects?
+        if (i >= 29) /* seems to be a harded maximum of 30 serialized objects? */
             return value;
 
-        ++i; // so we know we aren't using the original object anymore
+        ++i; /* so we know we aren't using the original object anymore */
 
         return value;
     };
 };
 
+/*
+ * Return all annotations for the current page and build them.
+ */
 AjaxCaller.prototype.loadAnnotations = function () {
 
     $.ajax({
@@ -65,10 +73,13 @@ AjaxCaller.prototype.loadAnnotations = function () {
     });
 };
 
+/*
+ * Creates a new annotation.
+ */
 AjaxCaller.prototype.createAnnotation = function (annotationInput) {
 
     var annotation = JSON.stringify(annotationInput, this.censor(annotationInput));
-    
+
     $.ajax({
         type: 'POST',
         cache: false,
@@ -88,6 +99,9 @@ AjaxCaller.prototype.createAnnotation = function (annotationInput) {
     });
 };
 
+/*
+ * Update an annotation.
+ */
 AjaxCaller.prototype.updateAnnotation = function (annotationInput) {
 
     var annotation = JSON.stringify(annotationInput, this.censor(annotationInput));
@@ -109,6 +123,9 @@ AjaxCaller.prototype.updateAnnotation = function (annotationInput) {
     });
 };
 
+/*
+ * Delete an annotation.
+ */
 AjaxCaller.prototype.deleteAnnotation = function (annotationInput) {
 
     /* Avoid call if pressed "Cancel" button on annotation creation" */

@@ -5,8 +5,15 @@ namespace app\components;
 use yii\base\Widget;
 use app\assets\TwitterAsset;
 
+/*
+ * Widget that draws the Twitter result.
+ * It has one public property $twitter (the twitter results).
+ */
 class TwitterWidget extends Widget {
 
+    /*
+     * The Twitter results.
+     */
     public $twitter;
 
     public function init() {
@@ -38,7 +45,7 @@ class TwitterWidget extends Widget {
                 }
 
                 if (isset($result['user_screen_name'])) {
-                    $html .= ' @ <span class="user_screen_name-label"></span><span class="user_screen_name">' . $result['user_screen_name'] . '</span>';
+                    $html .= ' @<span class="user_screen_name-label"></span><span class="user_screen_name">' . $result['user_screen_name'] . '</span>';
                 }
 
                 if (isset($result['user_country'])) {

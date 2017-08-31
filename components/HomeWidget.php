@@ -5,9 +5,18 @@ namespace app\components;
 use yii\base\Widget;
 use app\assets\HomeAsset;
 
-class PostListWidget extends Widget {
+/*
+ * Widget that draws the home page of the site.
+ */
+class HomeWidget extends Widget {
 
+    /*
+     * The title of the main category.
+     */
     public $category;
+    /*
+     * The posts list which contains their names.
+     */
     public $posts;
 
     public function init() {

@@ -5,8 +5,15 @@ namespace app\controllers;
 use Yii;
 use app\models\Annotations;
 
+/*
+ * Controller class for the annotation.
+ * It handles the possible actions.
+ */
 class AnnotationController extends \yii\web\Controller {
 
+    /*
+     * Returns all annotations made in a specific page (via article revision id).
+     */
     public function actionGetAnnotations() {
 
         $article_revision_id = Yii::$app->request->get('article_revision_id');
@@ -17,6 +24,9 @@ class AnnotationController extends \yii\web\Controller {
         return \yii\helpers\Json::encode($annotations_result);
     }
 
+    /*
+     * Creates a new annotation.
+     */
     public function actionCreate() {
 
         $annotation_id = Yii::$app->request->post('annotation_id');
@@ -32,6 +42,9 @@ class AnnotationController extends \yii\web\Controller {
         return \yii\helpers\Json::encode($result);
     }
 
+    /*
+     * Update an annotation.
+     */
     public function actionUpdate() {
 
         $annotation_id = Yii::$app->request->post('annotation_id');
@@ -44,6 +57,9 @@ class AnnotationController extends \yii\web\Controller {
         return \yii\helpers\Json::encode($result);
     }
 
+    /*
+     * Delete an annotation.
+     */
     public function actionDelete() {
 
         $annotation_id = Yii::$app->request->post('annotation_id');

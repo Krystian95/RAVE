@@ -120,7 +120,7 @@ class TwitterAPIExchange {
 
         $this->postfields = $array;
 
-        // rebuild oAuth
+        /* rebuild oAuth */
         if (isset($this->oauth['oauth_signature'])) {
             $this->buildOauth($this->url, $this->requestMethod);
         }
@@ -213,7 +213,7 @@ class TwitterAPIExchange {
             foreach ($getfields as $g) {
                 $split = explode('=', $g);
 
-                /** In case a null is passed through * */
+                /* In case a null is passed through */
                 if (isset($split[1])) {
                     $oauth[$split[0]] = urldecode($split[1]);
                 }
@@ -282,6 +282,9 @@ class TwitterAPIExchange {
 
         $feed = curl_init();
 
+        /*
+         * ADDED
+         */
         curl_setopt($feed, CURLOPT_SSL_VERIFYHOST, 0);
         curl_setopt($feed, CURLOPT_SSL_VERIFYPEER, 0);
 

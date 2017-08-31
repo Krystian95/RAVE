@@ -1026,7 +1026,6 @@ var annotatorObj;
             annotation.quote = [];
             annotation.ranges = [];
             annotation.highlights = [];
-            //annotation.highlights = ;
 
             for (_l = 0, _len3 = normedRanges.length; _l < _len3; _l++) {
                 normed = normedRanges[_l];

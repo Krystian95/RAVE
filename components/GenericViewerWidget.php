@@ -8,13 +8,35 @@ use app\assets\AnnotatorAsset;
 use app\assets\AnnotatorGuestAsset;
 use Yii;
 
+/*
+ * Widget that draws the Wikipedia article
+ * (of non main category).
+ */
 class GenericViewerWidget extends Widget {
 
+    /*
+     * Article title.
+     */
     public $article_title;
+    /*
+     * Article page id.
+     */
     public $article_pageId;
+    /*
+     * Article revision id.
+     */
     public $article_revisionId;
+     /*
+     * Article text.
+     */
     public $article_text;
+    /*
+     * The username of the user logged in (null if not exist).
+     */
     public $username_logged_in;
+    /*
+     * The link to the article's latest version (null if not exist).
+     */
     public $article_new_link;
 
     public function init() {

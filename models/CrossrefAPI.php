@@ -5,7 +5,7 @@ namespace app\models;
 use yii\base\Model;
 
 /**
- * ContactForm is the model behind the contact form.
+ * Class to create the Crossref API request.
  */
 class CrossrefAPI extends Model {
 
@@ -16,10 +16,16 @@ class CrossrefAPI extends Model {
         $this->query = $query;
     }
     
+    /*
+     * Returns the base url.
+     */
     public function getBaseUrl() {
         return $this->baseUrl;
     }
 
+    /*
+     * Returns the results.
+     */
     public function getResults() {
 
         $api = new API($this->baseUrl);
@@ -28,7 +34,7 @@ class CrossrefAPI extends Model {
 
         $queryForUrl = urlencode($mainQuery);
 
-        $limit = 10;
+        $limit = 30;
 
         $api_call = '?query=' . $queryForUrl . '&sort=published&order=asc&rows=' . $limit;
 
@@ -39,6 +45,9 @@ class CrossrefAPI extends Model {
         return $response;
     }
 
+    /*
+     * Rebuilds results by making them usable.
+     */
     private function buildResultsResponse($api_result) {
 
         if (isset($api_result['message']['items'])) {
@@ -113,10 +122,17 @@ class CrossrefAPI extends Model {
         }
     }
 
+    /*
+     * Sanitize the results.
+     */
     private function sanitize($string) {
         return preg_replace("/[^ \w]+/", " ", $string);
     }
 
+    /*
+     * Method that tests if a url return a 404.
+     * Return true if url return a 404 error, false otherwise.
+     */
     private function linkReturn404Error($url) {
         $file_headers = @get_headers($url);
         if (!$file_headers || $file_headers[0] == 'HTTP/1.1 404 Not Found') {

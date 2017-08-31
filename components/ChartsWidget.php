@@ -5,6 +5,11 @@ namespace app\components;
 use yii\base\Widget;
 use app\assets\ChartsAsset;
 
+/*
+ * Widget that draw the 2 charts on the "Charts" page:
+ * - Number of member states of the United Nations over time
+ * - Population growth of United Nations member states in the 1960s and 2016s
+ */
 class ChartsWidget extends Widget {
 
     public function init() {

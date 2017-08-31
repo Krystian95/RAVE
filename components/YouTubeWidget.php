@@ -5,8 +5,15 @@ namespace app\components;
 use yii\base\Widget;
 use app\assets\YouTubeAsset;
 
+/*
+ * Widget that draws the YouTube result.
+ * It has one public property $twitter (the youtube results).
+ */
 class YouTubeWidget extends Widget {
 
+    /*
+     * The YouTube results (links list).
+     */
     public $youtube;
 
     public function init() {

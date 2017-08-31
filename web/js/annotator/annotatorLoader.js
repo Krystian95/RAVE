@@ -4,7 +4,7 @@
 $(document).on('ready', function () {
 
     $.i18n.load(i18n_dict);
-    // Customise the default plugin options with the third argument.
+    /* Customise the default plugin options with the third argument. */
     var annotator = $('body').annotator().annotator().data('annotator');
     var propietary = $('#username_logged_in').val();
     annotator.addPlugin('Permissions', {
@@ -38,9 +38,9 @@ $(document).on('ready', function () {
             }
     );
 
-    //noinspection JSJQueryEfficiency
+    /*noinspection JSJQueryEfficiency*/
     $('body').annotator().annotator('addPlugin', 'Search');
 
-    //Annotation scroll
+    /*Annotation scroll*/
     $('#anotacions-uoc-panel').slimscroll({height: '95%'});
 });

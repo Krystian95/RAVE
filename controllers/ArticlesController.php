@@ -6,12 +6,22 @@ use app\models\Article;
 use app\models\YouTubeAPI;
 use Yii;
 
+/*
+ * Controller class for the Wikipedia Articles (Generic and 
+ * Specific Visualizer).
+ */
 class ArticlesController extends \yii\web\Controller {
 
+    /*
+     * Renders the index (main) page.
+     */
     public function actionIndex() {
         return $this->render('index');
     }
 
+    /*
+     * Renders as Ajax the results of the YouTube query.
+     */
     public function actionYouTube($query) {
 
         $youtube_api = new YouTubeAPI($query);
@@ -22,6 +32,9 @@ class ArticlesController extends \yii\web\Controller {
         ]);
     }
 
+    /*
+     * Renders the index with params to print the article.
+     */
     public function actionArticle($title, $newer = null) {
 
         $article = new Article($title);

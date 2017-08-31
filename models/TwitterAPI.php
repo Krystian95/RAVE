@@ -7,7 +7,7 @@ use yii\base\Model;
 use app\models\API;
 
 /**
- * ContactForm is the model behind the contact form.
+ * Class to create the Twitter API request.
  */
 class TwitterAPI extends Model {
 
@@ -25,6 +25,9 @@ class TwitterAPI extends Model {
         $this->query = $query;
     }
 
+     /*
+     * Returns the results.
+     */
     public function getResults() {
 
         require_once Yii::getAlias('@TwitterAPIExchange');
@@ -33,9 +36,11 @@ class TwitterAPI extends Model {
         $normalizeChars = $api->getNormalizeChar();
         $mainQuery = strtr($this->query, $normalizeChars);
         $queryForUrl = urlencode($mainQuery);
-        $limit = 10;
+        $limit = 30;
 
-        /* Richiede i 10 tweet più recenti cercando la parola "news" */
+        /*
+         * Returns the latest 10 tweets for a searched query
+         */
         $api_call = '?q=%23' . $queryForUrl . '&result_type=recent&count=' . $limit . '&lang=en&tweet_mode=extended&exclude=retweets';
 
         $twitter = new TwitterAPIExchange($this->keys);
@@ -51,6 +56,9 @@ class TwitterAPI extends Model {
         return $response;
     }
 
+    /*
+     * Rebuilds results by making them usable.
+     */
     private function buildResultsResponse($api_result) {
 
         if (isset($api_result['statuses'])) {

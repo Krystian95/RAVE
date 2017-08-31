@@ -1,6 +1,8 @@
 
+/*
+ * Js that permits to search into the menu's search bar.
+ */
 var cache = {};
-
 $(document).on('ready pjax:success', function () {
 
     setupAutocomplete($('#query-value-menu'));
@@ -35,7 +37,7 @@ $(document).on('ready pjax:success', function () {
     $('.query-value').bind('keypress', function (e) {
 
         var code = e.keyCode || e.which;
-        if (code === 13) { //Enter keycode
+        if (code === 13) { /*Enter keycode*/
 
             var params = {};
             params['query'] = $(this).val();
@@ -57,6 +59,9 @@ function scrollToTopResult() {
     }, 500);
 }
 
+/*
+ * Setup the autocomplete form.
+ */
 function setupAutocomplete(input) {
 
     input.autocomplete({

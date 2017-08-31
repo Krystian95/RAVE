@@ -8,7 +8,7 @@ use yii\db\Query;
 use app\models\API;
 
 /**
- * ContactForm is the model behind the contact form.
+ * Class to create the Wikipedia API request.
  */
 class WikipediaAPI extends Model {
 
@@ -20,19 +20,35 @@ class WikipediaAPI extends Model {
     public function __construct() {
         
     }
-    
+
+    /*
+     * Returns the base url.
+     */
+
     public function getBaseUrl() {
         return $this->baseUrl;
     }
+
+    /*
+     * Returns true if the string start with an uppe case, false otherwise.
+     */
 
     private function starts_with_upper($str) {
         $chr = mb_substr($str, 0, 1, "UTF-8");
         return mb_strtolower($chr, "UTF-8") != $chr;
     }
 
+    /*
+     * Sets the param for the search (query).
+     */
+
     public function setSearchParams($query) {
         $this->query = $query;
     }
+
+    /*
+     * Returns the search results.
+     */
 
     public function getSearchResults() {
 
@@ -52,6 +68,10 @@ class WikipediaAPI extends Model {
 
         return $response;
     }
+
+    /*
+     * Rebuilds results by making them usable.
+     */
 
     private function buildSearchResultsResponse($api_result) {
 
@@ -92,9 +112,17 @@ class WikipediaAPI extends Model {
         return $response;
     }
 
+    /*
+     * Sets the param for the search (category).
+     */
+
     public function setPostByCategoryParams($category) {
         $this->category = $category;
     }
+
+    /*
+     * Returns the list of the post contained in a category.
+     */
 
     public function getPostByCategory() {
 
@@ -103,7 +131,6 @@ class WikipediaAPI extends Model {
 
         $categoryNameForUrl = urlencode($categoryName);
         /*
-         * Ordine di aggiunta alla categoria (dalla più recente alla meno recente)
          * https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&format=json&list=categorymembers&cmtitle=Category%3AMember_states_of_the_United_Nations&cmlimit=500&cmsort=timestamp&cmdir=desc&cmnamespace=0
          */
         $api_call = '?action=query&format=json&list=categorymembers&cmtitle=Category:' . $categoryNameForUrl . '&cmlimit=' . $result_limit . '&cmsort=timestamp&cmdir=newer&cmnamespace=0';
@@ -115,6 +142,10 @@ class WikipediaAPI extends Model {
 
         return $response;
     }
+
+    /*
+     * Rebuilds results by making them usable.
+     */
 
     private function buildPostByCategoryResponse($api_result) {
 
@@ -156,10 +187,18 @@ class WikipediaAPI extends Model {
         return $response;
     }
 
+    /*
+     * Sets the article params (title and category).
+     */
+
     public function setArticleParams($title, $category) {
         $this->title = $title;
         $this->category = $category;
     }
+
+    /*
+     * Returns the post's title contained in a category.
+     */
 
     private function getPostTitlesByCategory($category) {
 
@@ -188,6 +227,10 @@ class WikipediaAPI extends Model {
 
         return $articles_titles;
     }
+
+    /*
+     * Return the Article.
+     */
 
     public function getArticle($newer = null) {
 
@@ -221,6 +264,10 @@ class WikipediaAPI extends Model {
         return $response;
     }
 
+    /*
+     * Returns an old article by its revision id.
+     */
+
     public function getOldArticle($revision_id) {
 
         /*
@@ -235,6 +282,10 @@ class WikipediaAPI extends Model {
 
         return $response;
     }
+
+    /*
+     * Returns the revision id of a specific page id if annotated.
+     */
 
     private function getRevisionIdIfAnnotated($pageId) {
 
@@ -257,6 +308,10 @@ class WikipediaAPI extends Model {
             return null;
         }
     }
+
+    /*
+     * Rebuilds results by making them usable.
+     */
 
     private function buildArticleResponse($api_result) {
 

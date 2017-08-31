@@ -14,17 +14,51 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use Yii;
 
+/*
+ * Widget that draws the Wikipedia article
+ * (of main category).
+ */
 class SpecificViewerWidget extends Widget {
 
+    /*
+     * Article title.
+     */
     public $article_title;
+    /*
+     * Article page id.
+     */
     public $article_pageId;
+    /*
+     * Article revision id.
+     */
     public $article_revisionId;
+    /*
+     * Article text.
+     */
     public $article_text;
+    /*
+     * The username of the user logged in (null if not exist).
+     */
     public $username_logged_in;
+    /*
+     * The link to the article's latest version (null if not exist).
+     */
     public $article_new_link;
+    /*
+     * Crossref results.
+     */
     public $crossref;
+    /*
+     * Google Maps results.
+     */
     public $google_maps;
+    /*
+     * Twitter results.
+     */
     public $twitter;
+    /*
+     * D3 results.
+     */
     public $d3;
 
     public function init() {
@@ -33,6 +67,9 @@ class SpecificViewerWidget extends Widget {
         SpecificViewerAsset::register($this->getView());
         AnnotatorAsset::register($this->getView());
 
+        /*
+         * Apply the restrictions to the annotation capabilities if user is a guest.
+         */
         if (Yii::$app->user->isGuest) {
             AnnotatorGuestAsset::register($this->getView());
         }
@@ -51,6 +88,9 @@ class SpecificViewerWidget extends Widget {
 HTML;
         $html .= include Yii::getAlias('@GuestAdvice');
 
+        /*
+         * Display the alert if the article printed is not the latest.
+         */
         if ($this->article_new_link !== null) {
             $html .= <<<HTML
     <p class="alert alert-warning" role="alert">

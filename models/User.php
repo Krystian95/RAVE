@@ -80,11 +80,8 @@ class User extends ActiveRecord implements IdentityInterface {
      * @return static|null
      */
    public static function findByUsername($username)
-    { 
-        
-        return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
-        //echo "<pre>";  print_r($user); exit();
-        
+    {
+        return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);        
     }
 
     /**
@@ -98,7 +95,7 @@ class User extends ActiveRecord implements IdentityInterface {
      * @inheritdoc
      */
     public function getAuthKey() { 
-        //return $this->authKey;
+       
     }
 
     /**
@@ -114,9 +111,6 @@ class User extends ActiveRecord implements IdentityInterface {
      * @param  string  $password password to validate
      * @return boolean if password provided is valid for current user
      */
-//    public function validatePassword($password) {
-//        return $this->password === $password;
-//    }
     
      public function validatePassword($password)
     {

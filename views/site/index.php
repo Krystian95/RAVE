@@ -2,7 +2,7 @@
 /* @var $this yii\web\View */
 
 $this->title = 'RAVE';
-use app\components\PostListWidget;
+use app\components\HomeWidget;
 ?>
 
 <div class="site-index">
@@ -80,7 +80,7 @@ use app\components\PostListWidget;
 
     <?php
     if (isset($posts) && isset($category)) {
-        echo PostListWidget::widget([
+        echo HomeWidget::widget([
             'category' => $category,
             'posts' => $posts
         ]);

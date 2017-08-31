@@ -1,6 +1,9 @@
 
-/* global searchUrl */
+/*
+ * Js that permits to search into the search page.
+ */
 
+/* global searchUrl */
 $(document).on('ready pjax:success', function () {
     setupMarker();
     setupPaginator();
@@ -16,6 +19,9 @@ function scrollToTopResult() {
     }, 500);
 }
 
+/*
+ * Setup the paginathing system.
+ */
 function setupPaginator() {
 
     var resultsCount = $('#results-container td.search-result').length;

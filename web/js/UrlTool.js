@@ -1,4 +1,7 @@
 
+/*
+ * Class that provides some utilities for urls.
+ */
 function UrlTool(baseUrl = null, params = null) {
 
     if (baseUrl !== null) {
@@ -7,6 +10,9 @@ function UrlTool(baseUrl = null, params = null) {
 }
 }
 
+/*
+ * Return the correct url to perform a search.
+ */
 UrlTool.prototype.createSearchUrl = function () {
 
     if (~this.baseUrlTemp[0].indexOf("/search/search")) {
@@ -29,7 +35,10 @@ UrlTool.prototype.createSearchUrl = function () {
     return this.finalUrl;
 };
 
-
+/*
+ * Rebuilds all the internal links to the wikipedia article
+ * so they remain inside the site.
+ */
 UrlTool.prototype.replaceUrlLinks = function (container) {
 
     var homeUrl = $('#homeUrl').val();

@@ -5,8 +5,15 @@ namespace app\components;
 use yii\base\Widget;
 use app\assets\CrossrefAsset;
 
+/*
+ * Widget that draws the Crossref result (via d3.js).
+ * It has one public property $crossref (the crossref results).
+ */
 class CrossrefWidget extends Widget {
 
+    /*
+     * The crossref results.
+     */
     public $crossref;
 
     public function init() {

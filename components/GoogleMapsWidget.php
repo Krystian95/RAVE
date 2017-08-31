@@ -5,8 +5,16 @@ namespace app\components;
 use yii\base\Widget;
 use app\assets\GoogleMapsAsset;
 
+/*
+ * Widget that draws the Google Maps' map.
+ * It prints 2 input hidden which contains the latitude and
+ * longitude of the marker to put into the map.
+ */
 class GoogleMapsWidget extends Widget {
 
+    /*
+     * The latitude and longitude of the marker.
+     */
     public $google_maps;
 
     public function init() {

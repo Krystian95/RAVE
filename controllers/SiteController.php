@@ -11,6 +11,9 @@ use yii\filters\AccessControl;
 use app\models\PostListGenerator;
 use app\models\MainCategory;
 
+/*
+ * Controller class for the entire site.
+ */
 class SiteController extends Controller {
 
     public function behaviors() {
@@ -47,6 +50,9 @@ class SiteController extends Controller {
         ];
     }
 
+    /*
+     * Renders the home page.
+     */
     public function actionIndex() {
 
         $main_category = new MainCategory();
@@ -61,6 +67,9 @@ class SiteController extends Controller {
         ]);
     }
 
+    /*
+     * Renders the login page.
+     */
     public function actionLogin() {
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
@@ -75,6 +84,9 @@ class SiteController extends Controller {
         }
     }
 
+    /*
+     * Redirect in case of logout.
+     */
     public function actionLogout() {
 
         Yii::$app->user->logout();
@@ -82,16 +94,25 @@ class SiteController extends Controller {
         return $this->goHome();
     }
     
+    /*
+     * Renders the credits page.
+     */
     public function actionCredits() {
 
         return $this->render('credits');
     }
     
+    /*
+     * Renders the charts page.
+     */
     public function actionCharts() {
 
         return $this->render('charts');
     }
 
+    /*
+     * Renders the register page.
+     */
     public function actionSignup() {
 
         $model = new SignupForm();

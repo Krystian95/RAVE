@@ -9,7 +9,7 @@ use app\models\WikipediaAPI;
 use app\models\CrossrefAPI;
 
 /**
- * ContactForm is the model behind the contact form.
+ * Class to create the D3 API request.
  */
 class D3API extends Model {
 
@@ -19,6 +19,9 @@ class D3API extends Model {
         $this->query = $query;
     }
 
+     /*
+     * Return the results.
+     */
     public function getResults() {
 
         $size_result_youtube = $this->getResultsSizeForYouTube();
@@ -42,6 +45,9 @@ class D3API extends Model {
         return $response;
     }
 
+    /*
+     * Returns the total number of results of Crossref.
+     */
     private function getResultsSizeForCrossref() {
 
         $crossref = new CrossrefAPI();
@@ -62,6 +68,9 @@ class D3API extends Model {
         }
     }
 
+    /*
+     * Returns the total number of results of Wikipedia.
+     */
     private function getResultsSizeForWikipedia() {
 
         $wikipedia = new WikipediaAPI();
@@ -82,6 +91,9 @@ class D3API extends Model {
         }
     }
 
+    /*
+     * Returns the total number of results of YouTube.
+     */
     private function getResultsSizeForYouTube() {
 
         $youtube = new YouTubeAPI();
