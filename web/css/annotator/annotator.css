@@ -342,12 +342,6 @@
 .annotator-editor .annotator-controls {
     text-align: right;
     padding: 3px;
-    /*border-top: 1px solid #d4d4d4;
-    background-color: #d4d4d4;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), color-stop(0.6, #dcdcdc), to(#d2d2d2));
-    background-image: -moz-linear-gradient(to bottom, #f5f5f5, #dcdcdc 60%, #d2d2d2);
-    background-image: -webkit-linear-gradient(to bottom, #f5f5f5, #dcdcdc 60%, #d2d2d2);
-    background-image: linear-gradient(to bottom, #f5f5f5, #dcdcdc 60%, #d2d2d2);*/
     -webkit-box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.7), inset -1px 0 0 rgba(255, 255, 255, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.7);
     -moz-box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.7), inset -1px 0 0 rgba(255, 255, 255, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.7);
     -o-box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.7), inset -1px 0 0 rgba(255, 255, 255, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.7);
@@ -427,18 +421,6 @@
     margin-top: -8px;
     background-position: 0 -105px
 }
-
-/*
-.annotator-editor a:active,
-.annotator-filter .annotator-filter-navigation button:active {
-    border-color: #700c49;
-    background-color: #d12e8e;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#fc7cca), color-stop(0.5, #e85db2), color-stop(0.5, #d12e8e), to(#ff009c));
-    background-image: -moz-linear-gradient(to bottom, #fc7cca, #e85db2 50%, #d12e8e 50%, #ff009c);
-    background-image: -webkit-linear-gradient(to bottom, #fc7cca, #e85db2 50%, #d12e8e 50%, #ff009c);
-    background-image: linear-gradient(to bottom, #fc7cca, #e85db2 50%, #d12e8e 50%, #ff009c)
-}
-*/
 
 .annotator-editor a.annotator-save::after {
     background-position: 0 -120px

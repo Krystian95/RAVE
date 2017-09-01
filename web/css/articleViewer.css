@@ -153,6 +153,16 @@ span.glyphicon.glyphicon-share.light-gray {
     font-weight: bold;
 }
 
+#article{
+    word-wrap: break-word;
+}
+
+#alert-intro {
+    display: block!important;
+    width: 100%;
+}
+
+
 @media (max-width: 769px) {
 
     .wrap > .container {
@@ -171,5 +181,10 @@ span.glyphicon.glyphicon-share.light-gray {
 
     #article .thumbinner{
         width: 100%!important;
+    }
+
+    #article .section-heading + div, .mf-section-0 {
+        padding: 7px;
+        overflow: scroll;
     }
 }

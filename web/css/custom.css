@@ -46,16 +46,22 @@ hr {
     color: #4e4e4e;
 }
 
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-    color: #555;
-    cursor: default;
-    background-color: #fff;
-    border: 1px solid #d3d3d3;
-    border-bottom-color: transparent;
+.tab-content > .active {
+    display: block;
+    text-align: justify;
 }
 
-.nav-tabs {
-    border-bottom: 1px solid #d3d3d3;
+body {
+    font-size: 16px;
+}
+
+#article{
+    text-align: justify;
+}
+
+.annotator-wrapper {
+    position: relative;
+    margin-bottom: -24px;
 }
 
 /* MENU */
@@ -124,6 +130,10 @@ nav#w0 {
 .site-login{
     width: 275px;
     margin: 0 auto;
+}
+
+.site-login .checkbox label {
+    padding-left: 0px;
 }
 
 /* REGISTER */
@@ -270,7 +280,7 @@ span.label.label-default.updated {
     }
 
     footer .container {
-        background-color: #f5f5f5!important;
+        background-color: #ffffff!important;
     }
 
     .form-group.field-loginform-rememberme {
@@ -300,11 +310,16 @@ span.label.label-default.updated {
     .navbar-inverse .navbar-nav > li > a:focus{
         border-radius: 0px;
     }
+    
 
     /* LOGIN */
 
     .site-login{
         width: 100%;
+    }
+    
+    .site-login .checkbox label {
+        padding-left: 20px;
     }
 
     /* REGISTER */

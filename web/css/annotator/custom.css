@@ -284,7 +284,6 @@ a.annotator-panel-reset,
     width: 13px!important;
     height: 12px!important;
     margin-top: -5.5px!important;
-    /*border: 1px solid rgb(222, 222, 222)!important;*/
     border: 0!important;
 }
 
@@ -403,6 +402,10 @@ button.annotator-delete{
 .annotator-invert-y a.annotator-save,
 .annotator-invert-y a.annotator-cancel {
     margin-top: 5px;
+}
+
+.annotator-widget {
+    min-width: 271px;
 }
 
 @media screen and (max-width: 767px) {

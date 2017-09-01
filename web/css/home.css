@@ -132,3 +132,10 @@ span.label.label-default.updated {
 .site-index .card:hover{
     background-color: white;
 }
+
+@media (min-width: 992px)
+{
+    .site-index .col-md-4 {
+        width: 33.3%;
+    }
+}

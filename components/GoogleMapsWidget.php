@@ -31,7 +31,7 @@ class GoogleMapsWidget extends Widget {
         $html .= <<<HTML
 <div class="google-maps-container">
     <div class="">
-        <div class="">
+        <div class="center-box">
             <form id="routes">
                 <div id="target" class="place-inputs">
                     <div class="place-input">

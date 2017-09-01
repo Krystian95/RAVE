@@ -65,6 +65,33 @@
     background-image: url(images/nav-tabs/grafici.png);
 }
 
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+    border-bottom-color: transparent;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.nav-tabs > li > a:hover {
+    border-color: #ddd #ddd #ddd;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #f1f1f1;
+}
+
+.nav > li > a {
+    position: relative;
+    display: block;
+    margin-top: -1px;
+}
+
 @media (max-width: 768px) {
 
     .nav.nav-tabs {
@@ -79,6 +106,7 @@
 
     .nav-tabs > li > a{
         border: 1px solid #eeeeee!important;
+        text-align: left;
     }
 
     .nav-tabs > li {

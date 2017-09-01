@@ -8,7 +8,7 @@ var i18n_dict = {
     "edit_annotation": "Allow anyone to <strong>edit</strong> this annotation",
     "No Comment": "No Comment",
     "Summary": "Summary",
-    "view_annotations": "View annotations",
+    "view_annotations": "Annotations",
     "doesnot_suport": "Sorry your current browser does not support the Annotator",
     "Edit": "Edit",
     "Delete": "Delete",

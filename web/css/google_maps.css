@@ -146,6 +146,37 @@ form #from-to-switcher:hover:after {
     display: none;
 }
 
+.center-box {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.center-box #to, #from {
+    width: 46%;
+    float: left;
+}
+
+.center-box form #from-to-switcher {
+    margin: 5px 18px 5px 18px;
+}
+
+.center-box #travel-mode, #measurement-mode{
+    width: 45%;
+    float: left;
+    margin-left: 15px;
+}
+
+.center-box #measurement-mode {
+    margin-left: 45px;
+}
+
+.center-box #go {
+    margin: 20px 0px 20px 16px;
+    width: 95%;
+    height: 40px;
+    float: left;
+}
+
 /* Landscape phones and down */
 @media (max-width: 768px) {
     #map-canvas {
@@ -189,6 +220,54 @@ form #from-to-switcher:hover:after {
     #path-result {
         margin: 0px 0px 20px 18px;
     }
+
+    .center-box {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .center-box #to, #from {
+        width: 100%;
+        float: left;
+    }
+
+    .center-box form #from-to-switcher {
+        margin-left: 50%;
+        margin-top: 3%;
+        margin-bottom: 3%;
+    }
+
+    .center-box .row.place-input.selector-wrapper {
+        clear: both;
+        width: 100%;
+    }
+
+    .center-box #travel-mode, #measurement-mode {
+        width: 100%;
+    }
+
+    .center-box #measurement-mode {
+        width: 100%;
+    }
+
+    .center-box #go {
+        margin: 20px 0px 20px 16px;
+        width: 92%;
+        height: 40px;
+        float: left;
+    }
+
+    .center-box #measurement-mode {
+        margin-left: 15px;
+    }
+
+    .center-box #travel-mode, #measurement-mode {
+        width: 100%;
+        float: left;
+        margin-left: 15px;
+        margin-bottom: -3px;
+    }
+
 }
 
 @media (min-width: 769px) {
