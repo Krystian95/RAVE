@@ -179,7 +179,7 @@ class WikipediaAPI extends Model {
         }
 
         for ($i = 0; $i < count($response); $i++) {
-            if ($response[$i]['title'] === $this->category) {
+            if ($response[$i]['title'] === $this->category || $response[$i]['title'] === 'Azerbaijan-United Nations relations') {
                 unset($response[$i]);
             }
         }
@@ -220,7 +220,7 @@ class WikipediaAPI extends Model {
         $articles_titles = array_column($items, 'title');
 
         for ($i = 0; $i < count($articles_titles); $i++) {
-            if ($articles_titles[$i] === $categoryName) {
+            if ($articles_titles[$i] === $categoryName || $articles_titles[$i] === 'Azerbaijan-United Nations relations') {
                 unset($articles_titles[$i]);
             }
         }
