@@ -43,7 +43,7 @@ UrlTool.prototype.replaceUrlLinks = function (container) {
 
     var homeUrl = $('#homeUrl').val();
 
-    $(container + " a:not(.external):not(.new_version_page_link)").each(function () {
+    $(container + " a:not(.external):not(.new_version_page_link):not(.alert-intro-link)").each(function () {
 
         var currentUrl = $(this).attr('href');
 

@@ -129,10 +129,6 @@ span.glyphicon.glyphicon-share.light-gray {
     font-size: inherit!important;
 }
 
-#alert-intro{
-    display: none;
-}
-
 .alert-success {
     color: #3c763d!important;
     background-color: #dff0d8!important;
@@ -158,10 +154,9 @@ span.glyphicon.glyphicon-share.light-gray {
 }
 
 #alert-intro {
-    display: block!important;
+    display: none;
     width: 100%;
 }
-
 
 @media (max-width: 769px) {
 
