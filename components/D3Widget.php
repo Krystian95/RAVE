@@ -27,7 +27,7 @@ class D3Widget extends Widget {
 
     public function run() {
 
-        $html = '<h3 class="title">Number of Results for Wikipedia, Crossref and YouTube</h3>';
+        $html = '<h3 class="title">Wikipedia, Crossref and YouTube Results Number</h3>';
 
         foreach ($this->d3 as $key => $value) {
             $html .= '<input type="hidden" id="d3-' . $key . '" value="' . $value . '" />';
