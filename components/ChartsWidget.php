@@ -26,7 +26,7 @@ class ChartsWidget extends Widget {
 
         $html .= '<div id="d3-grafic-members"></div>';
 
-        $html .= '<h3 class="titlepage">Population growth of United Nations member states in the 1960s and 2016s</h3>';
+        $html .= '<h3 class="titlepage">Population growth of United Nations member states in 1960 and 2016</h3>';
 
         $html .= '<div id="d3-grafic-population"></div>';
 
